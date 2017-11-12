@@ -89,4 +89,45 @@ path = new Path({
       strokeColor: 'red'
 
   });
+
+  var textItem = new PointText(new Point(10, 20));
+  textItem.fillColor = 'black';
+
+  textItem.content = 'Click and drag to draw a line.';
+  send('{"clear":"true"}');
+}
+
+window.clearIt=function(){
+  paper.project.clear();
+  paper.view.update();
+  path = new Path({
+
+        strokeColor: 'black'
+
+    });
+    receivedPath = new Path({
+
+        strokeColor: 'red'
+
+
+    });
+
+    var textItem = new PointText(new Point(10, 20));
+    textItem.fillColor = 'black';
+
+    textItem.content = 'Click and drag to draw a line.';
+}
+
+window.toggleMode=function(){
+
+
+  efficient=!efficient;
+  if(efficient){
+  $("#drawMode").html("Path mode");
+}
+else{
+  $("#drawMode").html("Point mode");
+
+}
+  log(efficient);
 }

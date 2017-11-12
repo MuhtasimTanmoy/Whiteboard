@@ -15,8 +15,8 @@ function receivingDataProcess(data) {
         is_typing();
     }
 
-		else if(message_json.clear_paper == "true"){
-			my_clear();
+		else if(message_json.clear == "true"){
+			clearIt();
 		}
 
 		else if(message_json[0] == 'Path'){
