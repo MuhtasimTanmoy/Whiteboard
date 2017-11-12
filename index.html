@@ -1,97 +1,78 @@
 <!doctype html>
 <html lang="en">
-    <head>
-      <link rel="stylesheet" type="text/css" href="./semantic-ui/dist/semantic.min.css">
-      <link rel="stylesheet" type="text/css" href="./cssCustom/main.css">
-    </head>
+<head>
+  <link rel="stylesheet" type="text/css" href="./semantic-ui/dist/semantic.min.css">
+ <link rel="stylesheet" type="text/css" href="./main.css">
 
 
-    <body>
-      <div class="ui container">
-        <div class="ui equal width center aligned padded grid">
 
-          <div class="row" style="padding-top:40px">
-            <div class="teal column">
 
+
+
+
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui equal width center aligned padded grid">
+      <div class="row" style="padding-top:40px">
+        <div class="teal column">
+        </div>
+        <div class="teal column">
+          <div class="ui text">Canvas</div>
+        </div>
+        <div class="teal column">
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="ui segment" id="myId"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="ui left icon input">
+            <input type="text" placeholder="Partner id" id="partner">
+            <i class="users icon"></i>
+          </div>
+          <div class="ui button red" style="display:none" onClick=disconnect()>Disconnect</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="ui input">
+          <input type="text" placeholder="Your message" id="message">
+        </div>
+        <div class="ui blue button" onclick=test()>Test</div>
+      </div>
+      <div class="row">
+          <div class="column">
+            <section id="draw">
+              <div class="row" style="padding-top: 20px">
+            <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);"
+              width="1046" height="553" data-paper-scope="1">
+
+              </canvas>
             </div>
-            <div class="teal column">
-              <div class="ui text">Canvas</div>
-            </div>
-            <div class="teal column">
-
-            </div>
+          </section>
+          </div>
 
           </div>
-          <div class="row">
-            <div class="column">
-              <div class="ui segment" id="myId"></div>
-            </div>
-
-          </div>
-
-          <div class="row">
-            <div class="column">
-
-              <div class="ui left icon input">
-  <input type="text" placeholder="Partner id" id="partner">
-  <i class="users icon"></i>
-</div>
-
-<div class="ui button red" style="display:none" onClick=disconnect()>Disconnect</div>
-
-
-
 
     </div>
-
-
-
-            </div>
-
-
-            <div class="row">
-              <div class="ui input">
-              <input type="text" placeholder="Your message" id="message">
-              </div>
-            </div>
-
-
-            <section id="draw">
-
-
-
-
-              <div class="row" style="padding-top: 20px">
-                <div class="column">
-                  <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1046" height="553" data-paper-scope="1"></canvas>
-                    </div>
-                </div>
-
-            </section>
-
-          </div>
-
-
-
-
-
-
-          <div class="shout_box">
-				<div class="header">Text Chat <span class="badge" id="unread_badge"></span><span id="typing_msg" style="display: none;">typing</span><div class="open_btn">&nbsp;</div></div>
-			  	<div class="toggle_chat" style="display: none;">
-				  	<div class="message_box"></div>
-				    <div class="user_info">
-				   		<input name="shout_message" id="shout_message" type="text" placeholder="Type Message Here">
-				    </div>
-			    </div>
-			</div>
-
+    <div class="shout_box">
+      <div class="header">Text Chat
+        <span class="badge" id="unread_badge"></span>
+        <span id="typing_msg" style="display: none;">typing</span>
+        <!-- <div class="open_btn">&nbsp;</div> -->
+      </div>
+      <div class="toggle_chat" style="display: none;">
+        <div class="message_box"></div>
+        <div class="user_info">
+          <input name="shout_message" id="shout_message" type="text" placeholder="Type Message Here">
         </div>
-        </div>
-
-
-
-
+      </div>
+    </div>
+  </div>
+  </div>
   <!-- <script>
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
@@ -99,14 +80,50 @@ ctx.moveTo(0,0);
 ctx.lineTo(200,100);
 ctx.stroke();
 </script> -->
+
+
 <script type="text/javascript" src="./peer.js"></script>
 <script src="/jquery/dist/jquery.js"></script>
+<script type="text/javascript" src="./responsivevoice.js"></script>
+<script type="text/javascript" src="./connection.js"></script>
+<script type="text/javascript" src="./paper-full.min.js"></script>
+
 <script type="text/javascript" src="./chat.js"></script>
 <script type="text/javascript" src="./test.js"></script>
-<script type="text/javascript" src="./connection.js"></script>
+<script type="text/javascript" src="./dataProcess.js"></script>
+<script type="text/javascript" src="./jquery.linkify.min.js"></script>
+
+
+
+
 <script src="/socket.io-client/dist/socket.io.js"></script>
 <script src="/semantic-ui/dist/semantic.min.css"></script>
-<script src="./paper-full.min.js"></script>
 <script src="/semantic-ui/dist/semantic.min.js"></script>
-    </body>
+
+
+
+  <script>
+      function send(data){
+        log(connection);
+        if(connection != null && connection.peer!=null){
+          connection.send(data);
+          console.log("Sent: "+ data);
+        }
+        else{
+          console.log("not connected");
+        }
+
+      }
+
+
+
+
+
+
+</script>
+
+<script type="text/paperscript" src="./draw.js" canvas="canvas">
+
+</body>
+
 </html>
