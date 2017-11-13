@@ -6,6 +6,29 @@
 </head>
 <body>
   <div class="ui container">
+    <div class="ui prompt modal">
+  <div class="header" id="setPromptHeader"></div>
+  <div class="content" id="setPromptContent">
+  </div>
+  <div class="actions">
+    <div class="ui blue approve button">Ok</div>
+  </div>
+</div>
+
+<div class="ui decision modal">
+<div class="header" id="setDecisionHeader">Decision</div>
+<div class="content" id="setDecisionContent">
+</div>
+
+<div class="actions">
+  <div class="ui blue approve button">Ok</div>
+  <div class="ui cancel button">Cancel</div>
+
+</div>
+
+</div>
+
+
     <div class="ui equal width center aligned padded grid">
       <div class="row" style="padding-top:40px">
         <div class="teal column">
@@ -27,7 +50,7 @@
             <input type="text" placeholder="Partner id" id="partner">
             <i class="users icon"></i>
           </div>
-          <div class="ui button red" style="display:none" onClick=disconnect()>Disconnect</div>
+          <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div>
         </div>
       </div>
       <div class="row">
@@ -53,6 +76,44 @@
 
           </div>
 
+          <div class="row" style="padding-top:30px">
+            <div class="column">
+                <div class="ui blue inverted segment">
+                  <h2>Send File</h2>
+                </div>
+
+                <div class="ui segment">
+                  <div>
+      <label for="file" class="ui icon blue button">
+          <i class="file icon"></i>
+          Open File</label>
+      <input type="file" id="file" style="display:none" )>
+  </div>
+                </div>
+
+
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="column">
+              <div class="ui segment">
+                <div class="ui blue button" id="voice_call">
+                  Call
+                </div>
+                <div class="ui yellow button" id="cancel_call" style="display:none">
+                  Cancel
+                </div>
+                <div class="ui red button" id="end_call" style="display : none">
+                  End
+                </div>
+              </div>
+              <div id="voice" style="display: none;">
+			<audio id="their_voice" controls="" autoplay=""></audio>
+		</div>
+            </div>
+          </div>
+
     </div>
     <div class="shout_box">
       <div class="header">Text Chat
@@ -76,8 +137,6 @@ ctx.moveTo(0,0);
 ctx.lineTo(200,100);
 ctx.stroke();
 </script> -->
-
-
 <script type="text/javascript" src="./peer.js"></script>
 <script src="/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./responsivevoice.js"></script>
@@ -86,6 +145,7 @@ ctx.stroke();
 
 <script type="text/javascript" src="./chat.js"></script>
 <script type="text/javascript" src="./test.js"></script>
+<script type="text/javascript" src="./voiceCall.js"></script>
 <script type="text/javascript" src="./dataProcess.js"></script>
 <script type="text/javascript" src="./jquery.linkify.min.js"></script>
 
@@ -100,7 +160,7 @@ ctx.stroke();
 
   <script>
       function send(data){
-        log(connection);
+        console.log(connection);
         if(connection != null && connection.peer!=null){
           connection.send(data);
           console.log("Sent: "+ data);

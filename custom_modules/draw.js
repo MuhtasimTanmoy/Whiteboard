@@ -30,7 +30,7 @@ function onMouseDrag(event) {
 
   if(efficient==false){send(JSON.stringify(event.point));
   }
-  log(JSON.stringify(event.point));
+  console.log(JSON.stringify(event.point));
 
 }
 
@@ -39,7 +39,7 @@ function onMouseUp(event) {
 
 	// When the mouse is released, simplify it:
 	path.simplify();
-  log(path.exportJSON());
+  console.log(path.exportJSON());
   if(efficient==false) {send('{"new_line":"true"}');}
   else{send(path.exportJSON());
 }
@@ -59,7 +59,7 @@ window.new_point = function(new_point){
         }
 window.new_line = function(){
 
-	log("New line added");
+	console.log("New line added");
   receivedPath = new Path({
 
       strokeColor: 'red'
@@ -129,5 +129,5 @@ else{
   $("#drawMode").html("Point mode");
 
 }
-  log(efficient);
+  console.log(efficient);
 }
