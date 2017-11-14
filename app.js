@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
-
-var ExpressPeerServer = require('peer').ExpressPeerServer;
+///////////////////////////////////////////////////////////////
+// var ExpressPeerServer = require('peer').ExpressPeerServer;
 
 
 var server = require('http').createServer(app);
@@ -14,8 +14,8 @@ app.use(express.static(__dirname + '/custom_modules'));
 var options = {
     debug: true
 }
-
-app.use('/api', ExpressPeerServer(server, options));
+////////////////////////////////////////////////////////
+// app.use('/api', ExpressPeerServer(server, options));
 
 
 app.get('/', function(req, res,next) {
@@ -37,15 +37,17 @@ app.get('/', function(req, res,next) {
 //
 //
 //       });
-
-server.on('connection', function(id) {
-  console.log("Connect called");
-  // console.log(id);
-});
-
-server.on('disconnect', function(id) {
-  console.log("Disconnect called");
-  // console.log(id);
-});
+///////////////////////////////////////////////////////////
+// server.on('connection', function(id) {
+//   console.log("Connect called");
+//   console.log(id);
+//   console.log(".................................................................");
+//   // console.log(id);
+// });
+//
+// server.on('disconnect', function(id) {
+//   console.log("Disconnect called");
+//   // console.log(id);
+// });
 
 server.listen(3000);

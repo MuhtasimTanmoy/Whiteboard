@@ -16,9 +16,12 @@ function receivingDataProcess(data) {
   } else if (message_json.clear == "true") {
     clearIt();
   } else if (message_json[0] == 'Path') {
-    my_draw(message_json //Messaging part
+    my_draw(message_json
     );
-  } else if (message_json.typing == "true") {
+  }
+
+  //Messaging part
+  else if (message_json.typing == "true") {
     is_typing();
   } else if (message_json.textMessage == "true") {
     var received_message = strip(decodeURIComponent(message_json.message));
@@ -138,11 +141,13 @@ function receivingDataProcess(data) {
     stat_partner_size = message_json.stat_size;
     updatePartnerStatus();
   }
+
+
+
 }
 
 function is_typing() {
   clearTimeout(typing_timeout);
-
   $("#typing_msg").show();
   typing_timeout = setTimeout(function() {
     $("#typing_msg").hide();

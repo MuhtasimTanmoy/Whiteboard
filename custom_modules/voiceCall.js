@@ -47,6 +47,7 @@ $("#voice_call").click(function(e) {
 });
 
 function get_mic() {
+  navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
   navigator.getUserMedia({
     audio: true,
     video: false

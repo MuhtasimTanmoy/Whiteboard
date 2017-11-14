@@ -1,32 +1,31 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <link rel="stylesheet" type="text/css" href="./semantic-ui/dist/semantic.min.css">
- <link rel="stylesheet" type="text/css" href="./main.css">
+  <link rel="stylesheet" type="text/css" href="./main.css">
 </head>
+
 <body>
   <div class="ui container">
     <div class="ui prompt modal">
-  <div class="header" id="setPromptHeader"></div>
-  <div class="content" id="setPromptContent">
-  </div>
-  <div class="actions">
-    <div class="ui blue approve button">Ok</div>
-  </div>
-</div>
+      <div class="header" id="setPromptHeader"></div>
+      <div class="content" id="setPromptContent">
+      </div>
+      <div class="actions">
+        <div class="ui blue approve button">Ok</div>
+      </div>
+    </div>
+    <div class="ui decision modal">
+      <div class="header" id="setDecisionHeader">Decision</div>
+      <div class="content" id="setDecisionContent">
+      </div>
 
-<div class="ui decision modal">
-<div class="header" id="setDecisionHeader">Decision</div>
-<div class="content" id="setDecisionContent">
-</div>
-
-<div class="actions">
-  <div class="ui blue approve button">Ok</div>
-  <div class="ui cancel button">Cancel</div>
-
-</div>
-
-</div>
+      <div class="actions">
+        <div class="ui blue approve button">Ok</div>
+        <div class="ui cancel button">Cancel</div>
+      </div>
+    </div>
 
 
     <div class="ui equal width center aligned padded grid">
@@ -50,6 +49,7 @@
             <input type="text" placeholder="Partner id" id="partner">
             <i class="users icon"></i>
           </div>
+          <div id="connect_notify"></div>
           <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div>
         </div>
       </div>
@@ -60,11 +60,10 @@
         <div class="ui blue button" onclick=test()>Test</div>
       </div>
       <div class="row">
-          <div class="column">
-            <section id="draw">
-              <div class="row" style="padding-top: 20px">
-            <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);"
-              width="1046" height="553" data-paper-scope="1">
+        <div class="column">
+          <section id="draw">
+            <div class="row" style="padding-top: 20px">
+              <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1046" height="553" data-paper-scope="1">
 
               </canvas>
 
@@ -72,47 +71,74 @@
               <div class="ui button blue" onclick="my_clear()">Clean</div>
             </div>
           </section>
+        </div>
+
+      </div>
+
+      <div class="row" style="padding-top:30px">
+        <div class="column">
+          <div class="ui blue inverted segment">
+            <h2>Send File</h2>
           </div>
 
-          </div>
-
-          <div class="row" style="padding-top:30px">
-            <div class="column">
-                <div class="ui blue inverted segment">
-                  <h2>Send File</h2>
-                </div>
-
-                <div class="ui segment">
-                  <div>
-      <label for="file" class="ui icon blue button">
+          <div class="ui segment">
+            <div>
+              <label for="file" class="ui icon blue button">
           <i class="file icon"></i>
           Open File</label>
-      <input type="file" id="file" style="display:none" )>
-  </div>
-                </div>
-
-
+              <input type="file" id="file" style="display:none" onchange="openFile(event)">
             </div>
           </div>
 
-          <div class="row">
-            <div class="column">
-              <div class="ui segment">
-                <div class="ui blue button" id="voice_call">
-                  Call
-                </div>
-                <div class="ui yellow button" id="cancel_call" style="display:none">
-                  Cancel
-                </div>
-                <div class="ui red button" id="end_call" style="display : none">
-                  End
-                </div>
-              </div>
-              <div id="voice" style="display: none;">
-			<audio id="their_voice" controls="" autoplay=""></audio>
-		</div>
+          <div class="ui segment">
+            <div id="progress" style="display: none;">
+						Received <span id="downloaded"></span> of <span id="file_size"></span> bytes
+					</div>
+					<div id="progress_sent" style="display: none;">
+						Sent <span id="sent"></span> of <span id="file_size_sent"></span> bytes
+					</div>
+
+          <table >
+							<thead>
+								<tr><td>Preview</td>
+								<td>Name</td>
+								<td>Download</td>
+							</tr></thead>
+							<tbody id="download_table">
+
+							</tbody>
+						</table>
+
+            <ul id="sent_files">
+
+						</ul>
+				</div>
+
+
+          </div>
+
+
+        </div>
+
+
+      <div class="row">
+        <div class="column">
+          <div class="ui segment">
+            <div class="ui blue button" id="voice_call">
+              Call
+            </div>
+            <div class="ui yellow button" id="cancel_call" style="display:none">
+              Cancel
+            </div>
+            <div class="ui red button" id="end_call" style="display : none">
+              End
             </div>
           </div>
+          <div id="voice" style="display: none;">
+            <audio id="their_voice" controls="" autoplay=""></audio>
+          </div>
+        </div>
+      </div>
 
     </div>
     <div class="shout_box">
@@ -137,48 +163,44 @@ ctx.moveTo(0,0);
 ctx.lineTo(200,100);
 ctx.stroke();
 </script> -->
-<script type="text/javascript" src="./peer.js"></script>
-<script src="/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="./responsivevoice.js"></script>
-<script type="text/javascript" src="./connection.js"></script>
-<script type="text/javascript" src="./paper-full.min.js"></script>
+  <script type="text/javascript" src="./peer.js"></script>
+  <script src="/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="./responsivevoice.js"></script>
+  <script type="text/javascript" src="./connection.js"></script>
+  <script type="text/javascript" src="./paper-full.min.js"></script>
 
-<script type="text/javascript" src="./chat.js"></script>
-<script type="text/javascript" src="./test.js"></script>
-<script type="text/javascript" src="./voiceCall.js"></script>
-<script type="text/javascript" src="./dataProcess.js"></script>
-<script type="text/javascript" src="./jquery.linkify.min.js"></script>
+  <script type="text/javascript" src="./chat.js"></script>
+  <script type="text/javascript" src="./test.js"></script>
+  <script type="text/javascript" src="./voiceCall.js"></script>
+  <script type="text/javascript" src="./dataProcess.js"></script>
+  <script type="text/javascript" src="./jquery.linkify.min.js"></script>
+  <script type="text/javascript" src="./fileTransfer.js"></script>
+  <script type="text/javascript" src="./fileDataProcess.js"></script>
 
 
 
 
-<script src="/socket.io-client/dist/socket.io.js"></script>
-<script src="/semantic-ui/dist/semantic.min.css"></script>
-<script src="/semantic-ui/dist/semantic.min.js"></script>
+
+
+  <script src="/socket.io-client/dist/socket.io.js"></script>
+  <script src="/semantic-ui/dist/semantic.min.css"></script>
+  <script src="/semantic-ui/dist/semantic.min.js"></script>
 
 
 
   <script>
-      function send(data){
-        console.log(connection);
-        if(connection != null && connection.peer!=null){
-          connection.send(data);
-          console.log("Sent: "+ data);
-        }
-        else{
-          console.log("not connected");
-        }
-
+    function send(data) {
+      if (connection != null && connection.peer != null) {
+        connection.send(data);
+        console.log("Sent: " + data);
+      } else {
+        console.log("not connected");
       }
 
+    }
+  </script>
 
-
-
-
-
-</script>
-
-<script type="text/paperscript" src="./draw.js" canvas="canvas">
+  <script type="text/paperscript" src="./draw.js" canvas="canvas">
 
 </body>
 
