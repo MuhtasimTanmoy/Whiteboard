@@ -137,6 +137,22 @@
           <div id="voice" style="display: none;">
             <audio id="their_voice" controls="" autoplay=""></audio>
           </div>
+          <div class="ui segment">
+            <div class="ui blue button" id="video_call">
+              Call
+            </div>
+            <div class="ui yellow button" id="cancel_video_call" style="display:none">
+              Cancel
+            </div>
+            <div class="ui red button" id="end_video_call" style="display : none">
+              End
+            </div>
+          </div>
+          <video id="their-video" width="50%" height="50%" style="z-index: 5; position: relative; margin-left: auto; margin-right: auto;" autoplay=""></video>
+          <div id="my-video-div">
+          						<video id="my-video" muted="true" width="180" height="120" autoplay=""></video>
+          					</div>
+
         </div>
       </div>
 
@@ -172,6 +188,7 @@ ctx.stroke();
   <script type="text/javascript" src="./chat.js"></script>
   <script type="text/javascript" src="./test.js"></script>
   <script type="text/javascript" src="./voiceCall.js"></script>
+  <script type="text/javascript" src="./videoCall.js"></script>
   <script type="text/javascript" src="./dataProcess.js"></script>
   <script type="text/javascript" src="./jquery.linkify.min.js"></script>
   <script type="text/javascript" src="./fileTransfer.js"></script>

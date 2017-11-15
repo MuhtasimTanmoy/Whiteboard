@@ -113,9 +113,7 @@ peer.on('call', function(call_in) {
     if (window.localStream == null || window.localStream.getAudioTracks().length == 0) {
       get_mic();
       send('{"call_status": "mic_inactive"}');
-      if (my_prompt != null) {
-        my_prompt.close();
-      }
+
       $("#setPromptHeader").text("Incoming call");
       $("#setPromptContent").html("<p>There is an incoming voice call from your partner, but your microphone is not activated. Please activate your microphone.</p>");
       $('.ui.prompt.modal').modal({
@@ -126,9 +124,7 @@ peer.on('call', function(call_in) {
       }).modal('show');
 
     } else {
-      if (my_prompt != null) {
-        my_prompt.close();
-      }
+
 
       $("#setDecisionHeader").text("Incoming call");
       $("#setDecisionContent").html("<p>There is an incoming voice call from your partner.</p>");
@@ -162,7 +158,71 @@ peer.on('call', function(call_in) {
 
     }
   }
+
+  if(call.metadata == "video"){
+		      	if(window.localStream == null || window.localStream.getVideoTracks().length == 0){
+		      		get_cam();
+		      		send('{"call_status": "cam_inactive"}');
+		      	// 	if(my_prompt != null){
+		      	// 		my_prompt.close();
+		      	// 	}
+		      	// 	my_prompt = new Impromptu("There is an incoming video call from your partner, but your camera is not activated. Please activate your camera.", {
+						// title: "Activate your Camera",
+						// buttons: { "OK": true}
+
+            $("#setPromptHeader").text("Incoming video call");
+            $("#setPromptContent").html("<p>There is an incoming voice call from your partner, but your camera is not activated. Please activate your microphone.</p>");
+            $('.ui.prompt.modal').modal({
+              closable: false,
+              onApprove: function() {
+                console.log("Approved");
+              }
+            }).modal('show');
+
+		      	}
+		      	else{
+
+              $("#setDecisionHeader").text("Incoming video call");
+              $("#setDecisionContent").html("<p>There is an incoming video call from your partner.</p>");
+              $('.ui.decision.modal').modal({
+                closable: false,
+                onDeny: function() {
+                  send('{"call_status": "hang_up_video"}');
+                },
+                onApprove: function() {
+                  console.log("Approved");
+                  if(window.localStream.getVideoTracks().length > 0){
+  	    							window.localStream.getVideoTracks()[0].enabled = true;
+  	    						}
+  						  		call.answer(window.localStream);
+  					      		call.on('stream', function(stream){
+  				    				window.remoteStream = stream;
+
+  						        	$('#their-video').prop('src', URL.createObjectURL(stream));
+  						        	$("#end_video_call").show();
+  							    	$("#video_call").hide();
+  							    	$("#cancel_video_call").hide();
+  					  	 		});
+  				  	  			call.on('close', function(){
+  							  	  	$("#end_video_call").hide();
+  								    $("#video_call").show();
+  								    $("#floating_video").hide();
+  				  	  			});
+                }
+              }).modal('show');
+		 	 	}
+	 		}
+
+
+
 });
+
+
+
+
+
+
+
 
 function connectionStart(partnerId) {
   console.log("Starting connection");
@@ -173,7 +233,6 @@ function connectionStart(partnerId) {
     if (connection.open == false) {
       $("#partner").show();
       $("#disconnect").hide();
-
       $("#connect_notify").html('Failed.Try again');
     }
   }, 10000);

@@ -80,8 +80,20 @@ function receivingDataProcess(data) {
     if (call) {
       call.close();
     }
-    $("#hang_up_video").hide();
+    $("#cancel_video_call").hide();
     $("#video_call").show();
+
+    $("#setPromptHeader").text("Video call hung up");
+    $("#setPromptContent").html("<p>Try again later!</p>");
+    $('.ui.prompt.modal')
+    .modal({
+      closable  : false,
+      onApprove : function() {
+        console.log("Approved");
+      }
+    })
+    .modal('show')
+    ;
   }
   if (message_json.call_status == "mic_inactive") {
     if (call) {
@@ -115,17 +127,20 @@ function receivingDataProcess(data) {
     if (call) {
       call.close();
     }
-    $("#hang_up_video").hide();
+    $("#cancel_video_call").hide();
     $("#video_call").show();
-    if (my_prompt != null) {
-      my_prompt.close();
-    }
-    my_prompt = new Impromptu("Your partner's camera is not activated. Please try again.", {
-      title: "Partner camera inactive",
-      buttons: {
-        "OK": true
+
+    $("#setPromptHeader").text("Call failed");
+    $("#setPromptContent").html("<p>Your partner's camera is not activated. Please try again.</p>");
+    $('.ui.prompt.modal')
+    .modal({
+      closable  : false,
+      onApprove : function() {
+        console.log("Approved");
       }
-    });
+    })
+    .modal('show')
+    ;
   }
 
   if (message_json.stat_mic != null) {
