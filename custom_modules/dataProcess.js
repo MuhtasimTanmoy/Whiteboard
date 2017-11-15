@@ -17,11 +17,9 @@ function receivingDataProcess(data) {
     clearIt();
   } else if (message_json[0] == 'Path') {
     my_draw(message_json
+    //Messaging part
     );
-  }
-
-  //Messaging part
-  else if (message_json.typing == "true") {
+  } else if (message_json.typing == "true") {
     is_typing();
   } else if (message_json.textMessage == "true") {
     var received_message = strip(decodeURIComponent(message_json.message));
@@ -66,15 +64,12 @@ function receivingDataProcess(data) {
 
     $("#setPromptHeader").text("Call hung up");
     $("#setPromptContent").html("<p>Try again later!</p>");
-    $('.ui.prompt.modal')
-    .modal({
-      closable  : false,
-      onApprove : function() {
+    $('.ui.prompt.modal').modal({
+      closable: false,
+      onApprove: function() {
         console.log("Approved");
       }
-    })
-    .modal('show')
-    ;
+    }).modal('show');
   }
   if (message_json.call_status == "hang_up_video") {
     if (call) {
@@ -85,15 +80,12 @@ function receivingDataProcess(data) {
 
     $("#setPromptHeader").text("Video call hung up");
     $("#setPromptContent").html("<p>Try again later!</p>");
-    $('.ui.prompt.modal')
-    .modal({
-      closable  : false,
-      onApprove : function() {
+    $('.ui.prompt.modal').modal({
+      closable: false,
+      onApprove: function() {
         console.log("Approved");
       }
-    })
-    .modal('show')
-    ;
+    }).modal('show');
   }
   if (message_json.call_status == "mic_inactive") {
     if (call) {
@@ -113,15 +105,12 @@ function receivingDataProcess(data) {
 
     $("#setPromptHeader").text("Call failed");
     $("#setPromptContent").html("<p>Your partner's microphone is not activated. Please try again.</p>");
-    $('.ui.prompt.modal')
-    .modal({
-      closable  : false,
-      onApprove : function() {
+    $('.ui.prompt.modal').modal({
+      closable: false,
+      onApprove: function() {
         console.log("Approved");
       }
-    })
-    .modal('show')
-    ;
+    }).modal('show');
   }
   if (message_json.call_status == "cam_inactive") {
     if (call) {
@@ -132,15 +121,12 @@ function receivingDataProcess(data) {
 
     $("#setPromptHeader").text("Call failed");
     $("#setPromptContent").html("<p>Your partner's camera is not activated. Please try again.</p>");
-    $('.ui.prompt.modal')
-    .modal({
-      closable  : false,
-      onApprove : function() {
+    $('.ui.prompt.modal').modal({
+      closable: false,
+      onApprove: function() {
         console.log("Approved");
       }
-    })
-    .modal('show')
-    ;
+    }).modal('show');
   }
 
   if (message_json.stat_mic != null) {
@@ -157,7 +143,25 @@ function receivingDataProcess(data) {
     updatePartnerStatus();
   }
 
+  /////////////////////////game//////////////////////////
+  if (message_json.chess == "true") {
+    //var chess_source = message_json.source;
+    if (message_json.new_game == "true") {
+      new_chess_game();
+    } else {
+      var move = game.move({
+        from: message_json.chess_source, to: message_json.chess_target, promotion: 'q' // NOTE: always promote to a queen for example simplicity
+      });
+      if (chess_moves == 0) {
+        my_chess_color = 'b';
+        board.orientation('black');
+      }
+      chess_moves++;
+      board.position(game.fen());
+      updateChessStatus();
+    }
 
+  }
 
 }
 
