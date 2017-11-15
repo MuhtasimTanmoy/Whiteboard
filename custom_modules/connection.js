@@ -163,12 +163,6 @@ peer.on('call', function(call_in) {
 		      	if(window.localStream == null || window.localStream.getVideoTracks().length == 0){
 		      		get_cam();
 		      		send('{"call_status": "cam_inactive"}');
-		      	// 	if(my_prompt != null){
-		      	// 		my_prompt.close();
-		      	// 	}
-		      	// 	my_prompt = new Impromptu("There is an incoming video call from your partner, but your camera is not activated. Please activate your camera.", {
-						// title: "Activate your Camera",
-						// buttons: { "OK": true}
 
             $("#setPromptHeader").text("Incoming video call");
             $("#setPromptContent").html("<p>There is an incoming voice call from your partner, but your camera is not activated. Please activate your microphone.</p>");
@@ -212,18 +206,7 @@ peer.on('call', function(call_in) {
               }).modal('show');
 		 	 	}
 	 		}
-
-
-
 });
-
-
-
-
-
-
-
-
 function connectionStart(partnerId) {
   console.log("Starting connection");
   connection = peer.connect(partnerId, {metadata: "connection"});

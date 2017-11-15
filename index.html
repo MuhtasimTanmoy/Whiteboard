@@ -4,9 +4,18 @@
 <head>
   <link rel="stylesheet" type="text/css" href="./semantic-ui/dist/semantic.min.css">
   <link rel="stylesheet" type="text/css" href="./main.css">
+
 </head>
 
 <body>
+  <div>
+
+    <div style="background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
+      <div id="particlesContainer"><canvas class="particles-js-canvas-el flipthis-highlight" style="width: 100%; height: 100%;" width="306" height="678"></canvas></div>
+
+
+    </div>
+
   <div class="ui container">
     <div class="ui prompt modal">
       <div class="header" id="setPromptHeader"></div>
@@ -172,6 +181,8 @@
     </div>
   </div>
   </div>
+
+  </div>
   <!-- <script>
 var c = document.getElementById("canvas");
 var ctx = c.getContext("2d");
@@ -193,13 +204,9 @@ ctx.stroke();
   <script type="text/javascript" src="./jquery.linkify.min.js"></script>
   <script type="text/javascript" src="./fileTransfer.js"></script>
   <script type="text/javascript" src="./fileDataProcess.js"></script>
-
-
-
-
-
-
   <script src="/socket.io-client/dist/socket.io.js"></script>
+  <script src="/particles.js/particles.js"></script>
+  <script type="text/javascript" src="/particlesEmbed.js"></script>
   <script src="/semantic-ui/dist/semantic.min.css"></script>
   <script src="/semantic-ui/dist/semantic.min.js"></script>
 

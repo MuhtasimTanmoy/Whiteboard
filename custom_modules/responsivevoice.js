@@ -1,11 +1,3 @@
-﻿//Look for other responsivevoice instances
-/*if (window.parent != null) {
-    var iframes = window.parent.document.getElementsByTagName('iframe');
-    for (var i = 0; i < iframes.length; i++) {
-        //iframes[i].style.width = "300px"
-    }
-}*/
-
 if (typeof responsiveVoice != 'undefined') {
     console.log('ResponsiveVoice already loaded');
     console.log(responsiveVoice);
@@ -53,103 +45,103 @@ if (typeof responsiveVoice != 'undefined') {
             {name: 'Google UK English Female'}, //3 female uk android/chrome
             {name: 'en-GB', rate: 0.25, pitch: 1}, //4 male uk IOS
             {name: 'en-AU', rate: 0.25, pitch: 1}, //5 female english IOS
-            
+
             {name: 'inglés Reino Unido'}, //6 spanish english android
             {name: 'English United Kingdom'}, //7 english english android
             {name: 'Fallback en-GB Female', lang: 'en-GB', fallbackvoice: true}, //8 fallback english female
-            
-            {name: 'Eszter Compact'}, //9 Hungarian mac 
+
+            {name: 'Eszter Compact'}, //9 Hungarian mac
             {name: 'hu-HU', rate: 0.4}, //10 Hungarian iOS
             {name: 'Fallback Hungarian', lang: 'hu', fallbackvoice: true}, //11 Hungarian fallback
 
             {name: 'Fallback Serbian', lang: 'sr', fallbackvoice: true}, //12 Serbian fallback
 
-            {name: 'Fallback Croatian', lang: 'hr', fallbackvoice: true}, //13 Croatian fallback		
+            {name: 'Fallback Croatian', lang: 'hr', fallbackvoice: true}, //13 Croatian fallback
 
-            {name: 'Fallback Bosnian', lang: 'bs', fallbackvoice: true}, //14 Bosnian fallback	
+            {name: 'Fallback Bosnian', lang: 'bs', fallbackvoice: true}, //14 Bosnian fallback
 
-            {name: 'Fallback Spanish', lang: 'es', fallbackvoice: true}, //15 Spanish fallback						
-            {name: 'Spanish Spain'}, //16 female es android/chrome		
-            {name: 'español España'}, //17 female es android/chrome	
+            {name: 'Fallback Spanish', lang: 'es', fallbackvoice: true}, //15 Spanish fallback
+            {name: 'Spanish Spain'}, //16 female es android/chrome
+            {name: 'español España'}, //17 female es android/chrome
             {name: 'Diego Compact', rate: 0.3}, //18 male es mac
-            {name: 'Google Español'}, //19 male es chrome				
+            {name: 'Google Español'}, //19 male es chrome
             {name: 'es-ES', rate: 0.20}, //20 male es iOS
 
-            {name: 'Google Français'}, //21 FR chrome				
-            {name: 'French France'}, //22 android/chrome		
-            {name: 'francés Francia'}, //23 android/chrome	
+            {name: 'Google Français'}, //21 FR chrome
+            {name: 'French France'}, //22 android/chrome
+            {name: 'francés Francia'}, //23 android/chrome
             {name: 'Virginie Compact', rate: 0.5}, //24 mac
-            {name: 'fr-FR', rate: 0.25}, //25 iOS		
-            {name: 'Fallback French', lang: 'fr', fallbackvoice: true}, //26 fallback								
+            {name: 'fr-FR', rate: 0.25}, //25 iOS
+            {name: 'Fallback French', lang: 'fr', fallbackvoice: true}, //26 fallback
 
-            {name: 'Google Deutsch'}, //27 DE chrome				
-            {name: 'German Germany'}, //28 android/chrome		
-            {name: 'alemán Alemania'}, //29 android/chrome	
+            {name: 'Google Deutsch'}, //27 DE chrome
+            {name: 'German Germany'}, //28 android/chrome
+            {name: 'alemán Alemania'}, //29 android/chrome
             {name: 'Yannick Compact', rate: 0.5}, //30 mac
-            {name: 'de-DE', rate: 0.25}, //31 iOS		
-            {name: 'Fallback Deutsch', lang: 'de', fallbackvoice: true}, //32 fallback			
+            {name: 'de-DE', rate: 0.25}, //31 iOS
+            {name: 'Fallback Deutsch', lang: 'de', fallbackvoice: true}, //32 fallback
 
-            {name: 'Google Italiano'}, //33 IT chrome				
-            {name: 'Italian Italy'}, //34 android/chrome		
-            {name: 'italiano Italia'}, //35 android/chrome	
+            {name: 'Google Italiano'}, //33 IT chrome
+            {name: 'Italian Italy'}, //34 android/chrome
+            {name: 'italiano Italia'}, //35 android/chrome
             {name: 'Paolo Compact', rate: 0.5}, //36 mac
-            {name: 'it-IT', rate: 0.25}, //37 iOS		
-            {name: 'Fallback Italian', lang: 'it', fallbackvoice: true}, //38 fallback								
+            {name: 'it-IT', rate: 0.25}, //37 iOS
+            {name: 'Fallback Italian', lang: 'it', fallbackvoice: true}, //38 fallback
 
-            {name: 'Google US English', timerSpeed:1}, //39 EN chrome				
-            {name: 'English United States'}, //40 android/chrome		
-            {name: 'inglés Estados Unidos'}, //41 android/chrome	
+            {name: 'Google US English', timerSpeed:1}, //39 EN chrome
+            {name: 'English United States'}, //40 android/chrome
+            {name: 'inglés Estados Unidos'}, //41 android/chrome
             {name: 'Vicki'}, //42 mac
-            {name: 'en-US', rate: 0.2, pitch: 1, timerSpeed:1.3}, //43 iOS		
-            {name: 'Fallback English', lang: 'en-US', fallbackvoice: true, timerSpeed:0}, //44 fallback										
+            {name: 'en-US', rate: 0.2, pitch: 1, timerSpeed:1.3}, //43 iOS
+            {name: 'Fallback English', lang: 'en-US', fallbackvoice: true, timerSpeed:0}, //44 fallback
             {name: 'Fallback Dutch', lang: 'nl', fallbackvoice: true, timerSpeed:0}, //45 fallback
 
             //{name: 'Simona Compact'}, //NaN Romanian mac female
             //{name: 'ro-RO', rate: 0.25}, //NaN iOS female
-            {name: 'Fallback Romanian', lang: 'ro', fallbackvoice: true}, //46 Romanian Male fallback	
+            {name: 'Fallback Romanian', lang: 'ro', fallbackvoice: true}, //46 Romanian Male fallback
 
-            {name: 'Milena Compact'}, //47 Romanian mac 
-            {name: 'ru-RU', rate: 0.25}, //48 iOS		
-            {name: 'Fallback Russian', lang: 'ru', fallbackvoice: true}, //49 Romanian fallback	
+            {name: 'Milena Compact'}, //47 Romanian mac
+            {name: 'ru-RU', rate: 0.25}, //48 iOS
+            {name: 'Fallback Russian', lang: 'ru', fallbackvoice: true}, //49 Romanian fallback
 
-            {name: 'Google 日本人', timerSpeed:1}, //50 JP Chrome 
-            {name: 'Kyoko Compact'}, //51 Japanese mac 
-            {name: 'ja-JP', rate: 0.25}, //52 iOS		
-            {name: 'Fallback Japanese', lang: 'ja', fallbackvoice: true}, //53 Japanese fallback	
+            {name: 'Google 日本人', timerSpeed:1}, //50 JP Chrome
+            {name: 'Kyoko Compact'}, //51 Japanese mac
+            {name: 'ja-JP', rate: 0.25}, //52 iOS
+            {name: 'Fallback Japanese', lang: 'ja', fallbackvoice: true}, //53 Japanese fallback
 
-            {name: 'Google 한국의', timerSpeed:1}, //54 KO Chrome 
-            {name: 'Narae Compact'}, //55 Korean mac 
-            {name: 'ko-KR', rate: 0.25}, //56 iOS		
-            {name: 'Fallback Korean', lang: 'ko', fallbackvoice: true}, //57 Korean fallback	
+            {name: 'Google 한국의', timerSpeed:1}, //54 KO Chrome
+            {name: 'Narae Compact'}, //55 Korean mac
+            {name: 'ko-KR', rate: 0.25}, //56 iOS
+            {name: 'Fallback Korean', lang: 'ko', fallbackvoice: true}, //57 Korean fallback
 
-            {name: 'Google 中国的', timerSpeed:1}, //58 CN Chrome 
-            {name: 'Ting-Ting Compact'}, //59 Chinese mac 
-            {name: 'zh-CN', rate: 0.25}, //60 iOS		
-            {name: 'Fallback Chinese', lang: 'zh-CN', fallbackvoice: true}, //61 Chinese fallback	
+            {name: 'Google 中国的', timerSpeed:1}, //58 CN Chrome
+            {name: 'Ting-Ting Compact'}, //59 Chinese mac
+            {name: 'zh-CN', rate: 0.25}, //60 iOS
+            {name: 'Fallback Chinese', lang: 'zh-CN', fallbackvoice: true}, //61 Chinese fallback
 
-            {name: 'Alexandros Compact'}, //62 Greek Male Mac 
-            {name: 'el-GR', rate: 0.25}, //63 iOS		
-            {name: 'Fallback Greek', lang: 'el', fallbackvoice: true}, //64 Greek Female fallback	
+            {name: 'Alexandros Compact'}, //62 Greek Male Mac
+            {name: 'el-GR', rate: 0.25}, //63 iOS
+            {name: 'Fallback Greek', lang: 'el', fallbackvoice: true}, //64 Greek Female fallback
 
-            {name: 'Fallback Swedish', lang: 'sv', fallbackvoice: true}, //65 Swedish Female fallback	
+            {name: 'Fallback Swedish', lang: 'sv', fallbackvoice: true}, //65 Swedish Female fallback
 
-            {name: 'hi-IN', rate: 0.25}, //66 iOS		
-            {name: 'Fallback Hindi', lang: 'hi', fallbackvoice: true} //67 Hindi Female fallback	
+            {name: 'hi-IN', rate: 0.25}, //66 iOS
+            {name: 'Fallback Hindi', lang: 'hi', fallbackvoice: true} //67 Hindi Female fallback
 
         ];
-        
+
         self.iOS = /(iPad|iPhone|iPod)/g.test( navigator.userAgent );
         self.is_chrome = navigator.userAgent.indexOf('Chrome') > -1;
         self.is_safari = navigator.userAgent.indexOf("Safari") > -1;
         if ((self.is_chrome)&&(self.is_safari)) {self.is_safari=false;}
         self.iOS_initialized = false;
-        
-        
+
+
         //Fallback cache voices
         self.cache_ios_voices = [{"name":"he-IL","voiceURI":"he-IL","lang":"he-IL"},{"name":"th-TH","voiceURI":"th-TH","lang":"th-TH"},{"name":"pt-BR","voiceURI":"pt-BR","lang":"pt-BR"},{"name":"sk-SK","voiceURI":"sk-SK","lang":"sk-SK"},{"name":"fr-CA","voiceURI":"fr-CA","lang":"fr-CA"},{"name":"ro-RO","voiceURI":"ro-RO","lang":"ro-RO"},{"name":"no-NO","voiceURI":"no-NO","lang":"no-NO"},{"name":"fi-FI","voiceURI":"fi-FI","lang":"fi-FI"},{"name":"pl-PL","voiceURI":"pl-PL","lang":"pl-PL"},{"name":"de-DE","voiceURI":"de-DE","lang":"de-DE"},{"name":"nl-NL","voiceURI":"nl-NL","lang":"nl-NL"},{"name":"id-ID","voiceURI":"id-ID","lang":"id-ID"},{"name":"tr-TR","voiceURI":"tr-TR","lang":"tr-TR"},{"name":"it-IT","voiceURI":"it-IT","lang":"it-IT"},{"name":"pt-PT","voiceURI":"pt-PT","lang":"pt-PT"},{"name":"fr-FR","voiceURI":"fr-FR","lang":"fr-FR"},{"name":"ru-RU","voiceURI":"ru-RU","lang":"ru-RU"},{"name":"es-MX","voiceURI":"es-MX","lang":"es-MX"},{"name":"zh-HK","voiceURI":"zh-HK","lang":"zh-HK"},{"name":"sv-SE","voiceURI":"sv-SE","lang":"sv-SE"},{"name":"hu-HU","voiceURI":"hu-HU","lang":"hu-HU"},{"name":"zh-TW","voiceURI":"zh-TW","lang":"zh-TW"},{"name":"es-ES","voiceURI":"es-ES","lang":"es-ES"},{"name":"zh-CN","voiceURI":"zh-CN","lang":"zh-CN"},{"name":"nl-BE","voiceURI":"nl-BE","lang":"nl-BE"},{"name":"en-GB","voiceURI":"en-GB","lang":"en-GB"},{"name":"ar-SA","voiceURI":"ar-SA","lang":"ar-SA"},{"name":"ko-KR","voiceURI":"ko-KR","lang":"ko-KR"},{"name":"cs-CZ","voiceURI":"cs-CZ","lang":"cs-CZ"},{"name":"en-ZA","voiceURI":"en-ZA","lang":"en-ZA"},{"name":"en-AU","voiceURI":"en-AU","lang":"en-AU"},{"name":"da-DK","voiceURI":"da-DK","lang":"da-DK"},{"name":"en-US","voiceURI":"en-US","lang":"en-US"},{"name":"en-IE","voiceURI":"en-IE","lang":"en-IE"},{"name":"hi-IN","voiceURI":"hi-IN","lang":"hi-IN"},{"name":"el-GR","voiceURI":"el-GR","lang":"el-GR"},{"name":"ja-JP","voiceURI":"ja-JP","lang":"ja-JP"}];
 
-        
-        
+
+
 
         self.systemvoices;
 
@@ -189,7 +181,7 @@ if (typeof responsiveVoice != 'undefined') {
 
 
         self.init = function() {
-            
+
             //Disable RV on IOS temporally
             /*if (self.iOS) {
                 self.enableFallbackMode();
@@ -201,8 +193,8 @@ if (typeof responsiveVoice != 'undefined') {
 
                 console.log('RV: Voice synthesis not supported');
                 self.enableFallbackMode();
-                
-                
+
+
 
             } else {
 
@@ -218,25 +210,25 @@ if (typeof responsiveVoice != 'undefined') {
 
                             self.voicesupport_attempts++;
                             if (self.voicesupport_attempts > self.VOICESUPPORT_ATTEMPTLIMIT) {
-                                
+
                                 clearInterval(gsvinterval);
-                                
+
                                 //On IOS, sometimes getVoices is just empty, but speech works. So we use a cached voice collection.
                                 if (window.speechSynthesis != null) {
-                                    
+
                                     if (self.iOS) {
-                                        
+
                                         console.log('RV: Voice support ready (cached)');
                                         self.systemVoicesReady(self.cache_ios_voices);
-                                        
+
                                     }else{
-                                        
+
                                         console.log("RV: speechSynthesis present but no system voices found");
                                         self.enableFallbackMode();
                                     }
-                                    
+
                                 } else {
-                                
+
                                     //We don't support voices. Using fallback
                                     self.enableFallbackMode();
                                 }
@@ -246,7 +238,7 @@ if (typeof responsiveVoice != 'undefined') {
 
                             console.log('RV: Voice support ready');
                             self.systemVoicesReady(v);
-                            
+
                             clearInterval(gsvinterval);
 
                         }
@@ -254,7 +246,7 @@ if (typeof responsiveVoice != 'undefined') {
                     }, 100);
                 }, 100);
             }
-            
+
             self.Dispatch("OnLoad");
         }
 
@@ -264,7 +256,7 @@ if (typeof responsiveVoice != 'undefined') {
             self.mapRVs();
 
             if (self.OnVoiceReady != null)
-                self.OnVoiceReady.call();            
+                self.OnVoiceReady.call();
         }
 
         self.enableFallbackMode = function() {
@@ -396,7 +388,7 @@ if (typeof responsiveVoice != 'undefined') {
             } else {
                 self.fallbackMode = false;
             }
-            
+
             self.msgprofile = profile;
             //console.log("Start multipart play");
 
@@ -417,15 +409,15 @@ if (typeof responsiveVoice != 'undefined') {
                     msg.lang = profile.collectionvoice.lang || profile.systemvoice.lang;
                     msg.rvIndex = i;
                     msg.rvTotal = multipartText.length;
-                    
+
                     if (i == 0) {
                         msg.onstart = self.speech_onstart;
-                    }        
+                    }
                     self.msgparameters.onendcalled = false;
-                    
+
                     if (parameters != null) {
 
-                        
+
 
                         if (i < multipartText.length - 1 && multipartText.length > 1) {
                             msg.onend = parameters.onchunkend;
@@ -441,7 +433,7 @@ if (typeof responsiveVoice != 'undefined') {
                             console.log('RV: Unknow Error');
                             console.log(e);
                         };
-                        
+
                         msg.onpause = parameters.onpause;
                         msg.onresume = parameters.onresume;
                         msg.onmark = parameters.onmark;
@@ -453,7 +445,7 @@ if (typeof responsiveVoice != 'undefined') {
                             console.log(e);
                         };
                     }
-                    //console.log(JSON.stringify(msg));				
+                    //console.log(JSON.stringify(msg));
                     speechSynthesis.speak(msg);
 
                 } else {
@@ -485,7 +477,7 @@ if (typeof responsiveVoice != 'undefined') {
         }
 
         self.startTimeout = function (text, callback) {
-            
+
            //if (self.iOS) {
             //   multiplier = 0.5;
            //}
@@ -493,13 +485,13 @@ if (typeof responsiveVoice != 'undefined') {
            var multiplier = self.msgprofile.collectionvoice.timerSpeed;
            if (self.msgprofile.collectionvoice.timerSpeed==null)
                multiplier = 1;
-            
+
            //console.log(self.msgprofile.collectionvoice.name);
            if (multiplier <=0)
                return;
-           
-            self.timeoutId = setTimeout(callback, multiplier * 1000 * (60 / self.WORDS_PER_MINUTE) * text.split(/\s+/).length); //avg 140 words per minute read time            
-            //console.log("Timeout " + self.timeoutId + " started: " + (multiplier * 1000 * (60 / self.WORDS_PER_MINUTE) * text.split(/\s+/).length).toString());            
+
+            self.timeoutId = setTimeout(callback, multiplier * 1000 * (60 / self.WORDS_PER_MINUTE) * text.split(/\s+/).length); //avg 140 words per minute read time
+            //console.log("Timeout " + self.timeoutId + " started: " + (multiplier * 1000 * (60 / self.WORDS_PER_MINUTE) * text.split(/\s+/).length).toString());
         }
 
         self.checkAndCancelTimeout = function () {
@@ -514,27 +506,27 @@ if (typeof responsiveVoice != 'undefined') {
             //console.log("Speech cancelled: Timeout " + self.timeoutId + " ended");
             self.cancel();
             self.cancelled = false;
-            //if (!self.iOS) //On iOS, cancel calls msg.onend 
+            //if (!self.iOS) //On iOS, cancel calls msg.onend
                 self.speech_onend();
-            
+
         }
 
         self.speech_onend = function () {
             self.checkAndCancelTimeout();
-            
+
             //Avoid this being automatically called just after calling speechSynthesis.cancel
             if (self.cancelled === true) {
                 self.cancelled = false;
                 return;
             }
-            
+
             //console.log("on end fired");
             if (self.msgparameters != null && self.msgparameters.onend != null && self.msgparameters.onendcalled!=true) {
                 //console.log("Speech on end called  -" + self.msgtext);
                 self.msgparameters.onendcalled=true;
                 self.msgparameters.onend();
-                
-            } 
+
+            }
 
         }
 
@@ -543,7 +535,7 @@ if (typeof responsiveVoice != 'undefined') {
             //console.log("Speech start");
             if (self.iOS || self.is_safari)
                 self.startTimeout(self.msgtext,self.speech_timedout);
-            
+
             self.msgparameters.onendcalled=false;
             if (self.msgparameters != null && self.msgparameters.onstart != null) {
                 self.msgparameters.onstart();
@@ -558,9 +550,9 @@ if (typeof responsiveVoice != 'undefined') {
             if (self.fallback_part_index == 0) {
                 self.speech_onstart();
             }
-            
+
             self.fallback_audio = self.fallback_parts[self.fallback_part_index];
-            
+
             if (self.fallback_audio == null) {
 
                 //Fallback audio is not working. Just wait for the timeout event
@@ -568,13 +560,13 @@ if (typeof responsiveVoice != 'undefined') {
 
             } else {
 
-                
+
                 var audio = self.fallback_audio;
                 setTimeout(function(){audio.playbackRate = self.fallback_playbackrate;},50)
                 audio.onloadedmetadata = function() {
                     audio.play();
                     audio.playbackRate = self.fallback_playbackrate;
-                }                
+                }
                 self.fallback_audio.play();
                 self.fallback_audio.addEventListener('ended', self.fallback_finishPart);
             }
@@ -719,19 +711,19 @@ if (typeof responsiveVoice != 'undefined') {
             return null;
 
         }
-        
+
         self.Dispatch = function(name) {
-            
-            if (self.hasOwnProperty(name + "_callbacks") && 
+
+            if (self.hasOwnProperty(name + "_callbacks") &&
                 self[name + "_callbacks"].length > 0) {
                 var callbacks = self[name + "_callbacks"];
                 for(var i=0; i<callbacks.length; i++) {
                     callbacks[i]();
                 }
-                
+
             }
         }
-        
+
         self.AddEventListener = function(name,callback) {
             if (self.hasOwnProperty(name + "_callbacks")) {
                 self[name + "_callbacks"].push(callback);
@@ -739,8 +731,8 @@ if (typeof responsiveVoice != 'undefined') {
                 console.log("RV: Event listener not found: " + name);
             }
         }
-        
-        
+
+
         //Event to initialize speak on iOS
         self.clickEvent = function() {
             if (self.iOS && !self.iOS_initialized) {
@@ -748,9 +740,9 @@ if (typeof responsiveVoice != 'undefined') {
                 self.iOS_initialized = true;
             }
         }
-        
-        
-        
+
+
+
         //We should use jQuery if it's available
         if (typeof $ === 'undefined') {
             document.addEventListener('DOMContentLoaded', function () {
@@ -761,8 +753,8 @@ if (typeof responsiveVoice != 'undefined') {
             $(document).ready(function () {
                 self.init();
             });
-        }        
-        
+        }
+
 
     }
     var responsiveVoice = new ResponsiveVoice();

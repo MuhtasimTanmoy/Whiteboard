@@ -1,6 +1,5 @@
 $("#video_call").click(function(e) {
-  console.log("Yo");
-  e.preventDefault();
+    e.preventDefault();
   if (call != null) {
     call.close();
   }

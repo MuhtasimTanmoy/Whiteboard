@@ -26,15 +26,6 @@ $("#voice_call").click(function(e) {
   } else {
     console.log("Coming here in get mic");
     get_mic();
-    if (my_prompt != null) {
-      my_prompt.close();
-    }
-    // my_prompt = new Impromptu("Your browser is asking you to activate your microphone. The popup should be somewhere on the top or bottom of your screen", {
-    //   title: "Activate Your Microphone and try again.",
-    //   buttons: {
-    //     "OK": true
-    //   }
-    // });
     $("#setPromptHeader").text("Microphone inactive");
     $("#setPromptContent").html("<p>Your browser is asking you to activate your microphone.Please activate your microphone and try again.</p>");
     $('.ui.prompt.modal').modal({
