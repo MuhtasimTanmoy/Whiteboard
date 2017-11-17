@@ -144,6 +144,58 @@ function receivingDataProcess(data) {
   }
 
   /////////////////////////game//////////////////////////
+
+
+  if(message_json.start_snake_game=="true"){
+
+    $("#setPromptHeader").text("Snake game");
+    $("#setPromptContent").html("<p>Your partner's wants to play snake game.Let's play.</p>");
+    $('.ui.prompt.modal').modal({
+      closable: false,
+      onApprove: function() {
+        send('{"start_snake_game_request_approve":"true"}');
+        snake_upperPlayer=false;
+        snakeGameStart();
+
+        
+      }
+    }).modal('show');
+
+  }
+
+  if(message_json.start_snake_game_request_approve=="true"){
+    snake_upperPlayer=true;
+    snakeGameStart();
+
+  }
+
+  if(message_json.snake_move){
+    var direction=message_json.snake_move;
+    if(snake_upperPlayer){
+      changeD2(direction);
+      
+    }
+    else{
+      console.log("Calling this: "+direction);
+      changeD(direction);
+    }
+    
+  }
+
+  if(message_json.snake_food_update=="true"){
+    console.log(message_json.food_x);
+    console.log(message_json.food_y);
+    
+    var data={
+      x:message_json.food_x,
+    y:message_json.food_y};
+
+    changeFood(data);
+  }
+
+  
+/////////////////////////////////Chess//////////////////////////////
+
   if (message_json.chess == "true") {
     //var chess_source = message_json.source;
     if (message_json.new_game == "true") {
@@ -164,6 +216,7 @@ function receivingDataProcess(data) {
   }
 
 }
+
 
 function is_typing() {
   clearTimeout(typing_timeout);

@@ -16,7 +16,7 @@ function test(){
 // ;
 
 
-$("#setDecisionHeader").text("Fuck off");
+$("#setDecisionHeader").text("Test");
 $("#setDecisionContent").html("<p>Your browser is asking you to activate your microphone.Please activate your microphone and try again.</p>");
 $('.ui.decision.modal')
 .modal({

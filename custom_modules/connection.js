@@ -36,6 +36,34 @@ var partner_file_type;
 var partner_file_name;
 var partner_file_array;
 
+//////////////////////////Snake_game//////////// 
+var snake_upperPlayer;
+var d;
+var d2;
+var food= {
+  x: 0, 
+  y: 0,
+};
+
+function changeD(data){
+  d=data;
+  console.log("Called in the main game");
+}
+
+function changeD2(data){
+  d2=data;
+  console.log("Called in the main game");
+}
+
+ function changeFood(data){
+   console.log("This one food");
+  food= {
+    x: data.x, 
+    y: data.y,
+  };
+
+  console.log(food);
+ }
 //var peer = new Peer(name, {key: 'a2fqeua8vn78ehfr'});
 
 // var peer = new Peer(name, {
