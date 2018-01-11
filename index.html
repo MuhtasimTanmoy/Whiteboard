@@ -520,6 +520,8 @@
                 arrayBuffer = reader.result;
                console.log(arrayBuffer);
                 buffer_array = new Uint8Array(arrayBuffer);
+
+                blob_data_send({pdfcontent:buffer_array});
               // console.log(buffer_array);
                 // var pdfBlob = new Blob(buffer_array, {type: "application/pdf"});
                 // //console.log(pdfBlob);
