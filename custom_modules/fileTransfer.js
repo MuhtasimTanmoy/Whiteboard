@@ -8,7 +8,7 @@ function openFile(event) {
   var incrementer = 0;
   var reader = new FileReader();
   blob_data_send({new_file: true, new_size: input.files[0].size, new_type: input.files[0].type, new_name: input.files[0].name});
-  reader.onload = function() {
+  reader.onload = function() {  
     arrayBuffer = reader.result;
     buffer_array = new Uint8Array(arrayBuffer);
     blob_data_send({new_pieces: buffer_array});
@@ -37,5 +37,6 @@ function blob_data_send(data) {
   if (blobConnection != null && blobConnection.open == true) {
     blobConnection.send(data);
   } else {
+    console.log("not sending");
   }
 }

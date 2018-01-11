@@ -36,12 +36,12 @@ var partner_file_type;
 var partner_file_name;
 var partner_file_array;
 
-//////////////////////////Snake_game//////////// 
+//////////////////////////Snake_game////////////
 var snake_upperPlayer;
 var d;
 var d2;
 var food= {
-  x: 0, 
+  x: 0,
   y: 0,
 };
 
@@ -58,13 +58,13 @@ function changeD2(data){
  function changeFood(data){
    console.log("This one food");
   food= {
-    x: data.x, 
+    x: data.x,
     y: data.y,
   };
 
   console.log(food);
  }
-//var peer = new Peer(name, {key: 'a2fqeua8vn78ehfr'});
+// var peer = new Peer(name, {key: 'a2fqeua8vn78ehfr'});
 
 // var peer = new Peer(name, {
 //   host: 'localhost',
@@ -73,13 +73,13 @@ function changeD2(data){
 //   debug:3
 // });
 
-
+//
 var peer = new Peer(name, {host: 'localhost', port: 9000,debug:3, path: '/',config: {icerServers: [
     { url: 'stun:stun1.l.google.com:19302' },
     { url: 'turn:numb.viagenie.ca',
-      credential: 'randompass',
-      username: 'mtanmoy5086@gmail.com' }
-  ]}
+     credential: 'randompass',
+     username: 'mtanmoy5086@gmail.com' }
+ ]}
 });
 
 
@@ -121,7 +121,7 @@ peer.on('error',function(err){
 
 peer.on('close',function(){
   console.log("Peer closed");
-  peer.distroy();
+  //peer.distroy();
 });
 
 
