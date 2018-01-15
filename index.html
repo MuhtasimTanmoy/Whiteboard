@@ -11,37 +11,110 @@
 </head>
 
 <body>
+
+
+  <!-- <div class="pusher"> -->
   <div>
+    <div>
+      <div>
 
-    <div style="background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
-      <div id="particlesContainer"><canvas class="particles-js-canvas-el flipthis-highlight" style="width: 100%; height: 100%;" width="306" height="678"></canvas></div>
+        <div id="particleHolder" style="display:none;background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
 
-      <!-- <div class="ui button"><a href="http://localhost:3000/#chess_section">Connect</a></div> -->
-    </div>
 
-    <div class="ui">
-      <div class="ui prompt modal">
-        <div class="header" id="setPromptHeader"></div>
-        <div class="content" id="setPromptContent">
+
+
+          <div style="position: relative;
+    text-align: center;
+    color: white;">
+            <div id="particlesContainer" style="width:100%;height:680px">
+            </div>
+            <div style="position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);">
+              <h1 style="font-size:38px">Canvas</h1>
+
+              <div class="ui text " id="myId"></div>
+
+              <div class="ui left icon input">
+                <input type="text" placeholder="Partner id" id="partner">
+                <i class="add user icon"></i>
+              </div>
+
+              <!-- <div id="connect_notify"></div>
+    <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div> -->
+
+            </div>
+          </div>
+
+
+
+          <!-- <div class="ui button"><a href="http://localhost:3000/#chess_section">Connect</a></div> -->
         </div>
-        <div class="actions">
-          <div class="ui blue approve button">Ok</div>
-        </div>
-      </div>
-      <div class="ui decision modal">
-        <div class="header" id="setDecisionHeader">Decision</div>
-        <div class="content" id="setDecisionContent">
-        </div>
 
-        <div class="actions">
-          <div class="ui blue approve button">Ok</div>
-          <div class="ui cancel button">Cancel</div>
-        </div>
-      </div>
+        <div class="ui" style="display:block;padding-left:100px;background:#f8f8f8" id="showOnConnect">
+          <div class="ui prompt modal">
+            <div class="header" id="setPromptHeader"></div>
+            <div class="content" id="setPromptContent">
+            </div>
+            <div class="actions">
+              <div class="ui blue approve button">Ok</div>
+            </div>
+          </div>
+          <div class="ui decision modal">
+            <div class="header" id="setDecisionHeader">Decision</div>
+            <div class="content" id="setDecisionContent">
+            </div>
+
+            <div class="actions">
+              <div class="ui blue approve button">Ok</div>
+              <div class="ui cancel button">Cancel</div>
+            </div>
+          </div>
 
 
-      <div class="ui equal width center aligned padded grid">
-        <div class="row" style="padding-top:40px">
+
+          <div class="ui left demo vertical visible inverted sidebar labeled icon menu">
+            <a class="item" onclick="showDashBoard()">
+            <i class="home icon"></i>
+            Home
+          </a>
+            <a class="item" onclick="showCanvas()">
+            <i class="write icon"></i>
+            Canvas
+          </a>
+            <a class="item" onclick="showVoiceCall()">
+            <i class="call icon"></i>
+            Voice
+          </a>
+            <a class="item" onclick="showVideoCall()">
+            <i class="photo icon"></i>
+            Video
+          </a>
+            <a class="item" onclick="showGames()">
+            <i class="game icon"></i>
+            Games
+          </a>
+            <a class="item" onCLick="showPDF()">
+            <i class="file pdf outline icon"></i>
+            PDF
+          </a>
+            <a class="item" onCLick="showDropbox()">
+            <i class="dropbox icon"></i>
+            File
+          </a>
+            <a class="item" onCLick="rollBack()">
+            <i class="power icon"></i>
+            End
+          </a>
+          </div>
+
+
+
+
+
+          <div class="ui equal width center aligned padded grid">
+            <!-- <div class="row" style="padding-top:40px">
           <div class="teal column">
           </div>
           <div class="teal column">
@@ -49,94 +122,124 @@
           </div>
           <div class="teal column">
           </div>
-        </div>
-        <div class="row">
+        </div> -->
+            <!-- <div class="row">
           <div class="column">
             <div class="ui segment" id="myId"></div>
           </div>
-        </div>
-        <div class="row">
-          <div class="column">
-            <div class="ui left icon input">
+        </div> -->
+            <div id="dashboard_section" class="row">
+              <div class="column">
+                <!-- <div class="ui left icon input">
               <input type="text" placeholder="Partner id" id="partner">
               <i class="users icon"></i>
+            </div> -->
+                <div id="connect_notify"></div>
+                <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div>
+                <div style="margin:0px 80px 0px 80px">
+                <div class="cardItem">
+                  <div class="cardHover">
+
+                    <div class="content" style="text-align:center;padding:20px">
+                        <div class="ui image " style="height:100px">
+                          <div>
+                              <i class="game large icon" style="color:#3f3f3f"></i>
+                          </div>
+                    </div>
+                    <div style="padding-bottom:20px">
+                      <a class="header " style="color:#a8a8a8">
+                        Game
+                      </a>
+                    </div>
+                    </div>
+
+
+                  </div>
+                </div>
+                <div class="cardItem">
+                  <div class="cardHover">
+                    <div style="height:40px;width:40px;background:#000"></div>
+                  </div>
+                </div>
+                <div class="cardItem">
+                  <div class="cardHover">
+                    <div style="height:40px;width:40px;background:#000"></div>
+                  </div>
+                </div>
+                </div>
+              </div>
             </div>
-            <div id="connect_notify"></div>
-            <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div>
-          </div>
-        </div>
-        <div class="row">
+            <!-- <div class="row">
           <div class="ui input">
             <input type="text" placeholder="Your message" id="message">
           </div>
           <div class="ui blue button" onclick=test()>Test</div>
-        </div>
-        <div class="row">
-          <div class="column">
-            <section id="draw">
-              <div class="row" style="padding-top: 20px">
-                <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1046" height="553" data-paper-scope="1">
-
+        </div> -->
+            <div id="canvas_section" class="row">
+              <div class="column">
+                <section id="draw">
+                  <div class="row" style="padding-top: 20px">
+                    <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1046" height="553" data-paper-scope="1">
               </canvas>
 
-                <div class="ui button blue" id="drawMode" onCLick=toggleMode()>Point Mode</div>
-                <div class="ui button blue" onclick="my_clear()">Clean</div>
+                    <div class="ui button blue" id="drawMode" onCLick=toggleMode()>Point Mode</div>
+                    <div class="ui button blue" onclick="my_clear()">Clean</div>
+                  </div>
+                </section>
               </div>
-            </section>
-          </div>
 
-        </div>
-
-        <div class="row" style="padding-top:30px">
-          <div class="column">
-            <div class="ui blue inverted segment">
-              <h2>Send File</h2>
             </div>
 
-            <div class="ui segment">
-              <div>
-                <label for="file" class="ui icon blue button">
+            <div id="dropbox_section" class="row" style="padding-top:30px">
+              <div class="column">
+                <div class="ui blue inverted segment">
+                  <h2>Send File</h2>
+                </div>
+
+                <div class="ui segment">
+                  <div>
+                    <label for="file" class="ui icon blue button">
           <i class="file icon"></i>
           Open File</label>
-                <input type="file" id="file" style="display:none" onchange="openFile(event)">
+                    <input type="file" id="file" style="display:none" onchange="openFile(event)">
+                  </div>
+                </div>
+
+                <div class="ui segment">
+                  <div id="progress" style="display: none;">
+                    Received <span id="downloaded"></span> of <span id="file_size"></span> bytes
+                  </div>
+                  <div id="progress_sent" style="display: none;">
+                    Sent <span id="sent"></span> of <span id="file_size_sent"></span> bytes
+                  </div>
+
+                  <table>
+                    <thead>
+                      <tr>
+                        <td>Preview</td>
+                        <td>Name</td>
+                        <td>Download</td>
+                      </tr>
+                    </thead>
+                    <tbody id="download_table">
+
+                    </tbody>
+                  </table>
+
+                  <ul id="sent_files">
+
+                  </ul>
+                </div>
+
+
               </div>
+
+
             </div>
 
-            <div class="ui segment">
-              <div id="progress" style="display: none;">
-                Received <span id="downloaded"></span> of <span id="file_size"></span> bytes
-              </div>
-              <div id="progress_sent" style="display: none;">
-                Sent <span id="sent"></span> of <span id="file_size_sent"></span> bytes
-              </div>
-
-              <table>
-                <thead>
-                  <tr>
-                    <td>Preview</td>
-                    <td>Name</td>
-                    <td>Download</td>
-                  </tr>
-                </thead>
-                <tbody id="download_table">
-
-                </tbody>
-              </table>
-
-              <ul id="sent_files">
-
-              </ul>
-            </div>
 
 
-          </div>
-
-
-        </div>
-
-
-
-        <!-- <div class="row">
+            <!-- <div class="row">
           <div class="column">
             <embed src="./a.pdf" width="1200" height="800" type='application/pdf'>
 
@@ -146,542 +249,267 @@
 
 
 
-        <div class="row">
-          <div class="column">
-            <div class="ui segment">
-              <div class="ui blue button" id="voice_call">
-                Call
-              </div>
-              <div class="ui yellow button" id="cancel_call" style="display:none">
-                Cancel
-              </div>
-              <div class="ui red button" id="end_call" style="display : none">
-                End
-              </div>
-            </div>
-            <div id="voice" style="display: none;">
-              <audio id="their_voice" controls="" autoplay=""></audio>
-            </div>
-            <div class="ui segment">
-              <div class="ui blue button" id="video_call">
-                Call
-              </div>
-              <div class="ui yellow button" id="cancel_video_call" style="display:none">
-                Cancel
-              </div>
-              <div class="ui red button" id="end_video_call" style="display : none">
-                End
-              </div>
-            </div>
-            <video id="their-video" width="50%" height="50%" style="z-index: 5; position: relative; margin-left: auto; margin-right: auto;" autoplay=""></video>
-            <div id="my-video-div">
-              <video id="my-video" muted="true" width="180" height="120" autoplay=""></video>
-            </div>
-
-          </div>
-        </div>
-
-
-
-        <div class="row">
-          <div class="column">
-
-
-            <section id="chess_section">
-              <div style="text-align:center">
-                <h1>Play Chess</h1>
-              </div>
-              <div id="board_div" align="center">
-                <div id="board" style="width:500px;">
-                  <div class="chessboard-63f37">
-                    <div class="board-b72b1" style="width: 464px;">
-                      <div class="row-5277c">
-                        <div class="square-55d63 white-1e1d7 square-a8" style="width: 58px; height: 58px" id="a8-bdb3-0f88-1b32-8c35-8470-fb7e-39b0-7325" data-square="a8">
-                          <div class="notation-322f9 numeric-fc462">8</div><img src="./assets/bR.png" alt="" class="piece-417db" data-piece="bR" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-b8" style="width: 58px; height: 58px" id="b8-8c97-8044-0ae2-1a5b-e4ad-451d-1bae-9e82" data-square="b8"><img src="./assets/bN.png" alt="" class="piece-417db" data-piece="bN" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-c8" style="width: 58px; height: 58px" id="c8-7d1c-e456-d1da-1544-4f58-7b14-f071-c6d9" data-square="c8"><img src="./assets/bB.png" alt="" class="piece-417db" data-piece="bB" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-d8" style="width: 58px; height: 58px" id="d8-9e26-dc7c-9b21-d13d-2dbd-5c9b-4803-acca" data-square="d8"><img src="./assets/bQ.png" alt="" class="piece-417db" data-piece="bQ" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-e8" style="width: 58px; height: 58px" id="e8-f411-6f3a-2d46-c312-0b51-22dd-6902-641b" data-square="e8"><img src="./assets/bK.png" alt="" class="piece-417db" data-piece="bK" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-f8" style="width: 58px; height: 58px" id="f8-f0c6-0d41-c1c1-c0e5-e9f9-bdd3-e01d-9d01" data-square="f8"><img src="./assets/bB.png" alt="" class="piece-417db" data-piece="bB" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-g8" style="width: 58px; height: 58px" id="g8-55cf-e39a-906b-1bda-ca38-a63a-a5ca-ea88" data-square="g8"><img src="./assets/bN.png" alt="" class="piece-417db" data-piece="bN" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-h8" style="width: 58px; height: 58px" id="h8-7b3e-133f-3e13-3a3c-7959-afae-7121-1067" data-square="h8"><img src="./assets/bR.png" alt="" class="piece-417db" data-piece="bR" style="width: 58px;height: 58px;"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 black-3c85d square-a7" style="width: 58px; height: 58px" id="a7-c64a-3157-e5bd-4bd3-1b56-792f-fd45-fd30" data-square="a7">
-                          <div class="notation-322f9 numeric-fc462">7</div><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-b7" style="width: 58px; height: 58px" id="b7-c37a-47ed-a971-c3e5-52cc-d99d-2b0a-1153" data-square="b7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-c7" style="width: 58px; height: 58px" id="c7-1ceb-49bd-cdd3-db74-da36-0214-d29f-9a2e" data-square="c7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-d7" style="width: 58px; height: 58px" id="d7-0d43-cfa1-1b77-e80f-a37c-55c9-2715-4f6b" data-square="d7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-e7" style="width: 58px; height: 58px" id="e7-6f54-03f0-cde1-0aae-6af9-05f0-6eed-d293" data-square="e7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-f7" style="width: 58px; height: 58px" id="f7-5de3-aab0-48bb-a072-6317-1bc5-b7ca-1ac9" data-square="f7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-g7" style="width: 58px; height: 58px" id="g7-28ad-c10f-79d9-85c6-22de-3764-0d53-0b03" data-square="g7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-h7" style="width: 58px; height: 58px" id="h7-db30-a90d-5b68-17c8-9852-77be-b16b-53b5" data-square="h7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 white-1e1d7 square-a6" style="width: 58px; height: 58px" id="a6-46a1-91c8-9964-453c-4b70-9fa0-b497-8384" data-square="a6">
-                          <div class="notation-322f9 numeric-fc462">6</div>
-                        </div>
-                        <div class="square-55d63 black-3c85d square-b6" style="width: 58px; height: 58px" id="b6-8742-ab51-50f4-f164-0c40-754f-2dac-e6ca" data-square="b6"></div>
-                        <div class="square-55d63 white-1e1d7 square-c6" style="width: 58px; height: 58px" id="c6-4dd9-60cc-691b-3b83-778f-ffc1-f7e9-e480" data-square="c6"></div>
-                        <div class="square-55d63 black-3c85d square-d6" style="width: 58px; height: 58px" id="d6-49a9-752c-b120-06bf-21b7-2125-c31e-cc0d" data-square="d6"></div>
-                        <div class="square-55d63 white-1e1d7 square-e6" style="width: 58px; height: 58px" id="e6-6cc1-b097-f204-917b-3154-f998-80ae-3677" data-square="e6"></div>
-                        <div class="square-55d63 black-3c85d square-f6" style="width: 58px; height: 58px" id="f6-bc03-b8c5-7f85-faf7-2295-d014-b23b-320d" data-square="f6"></div>
-                        <div class="square-55d63 white-1e1d7 square-g6" style="width: 58px; height: 58px" id="g6-e349-3017-937e-1fbe-31ff-448c-d6a8-b8fa" data-square="g6"></div>
-                        <div class="square-55d63 black-3c85d square-h6" style="width: 58px; height: 58px" id="h6-488b-4d02-ad5e-831d-622c-0e06-6011-f877" data-square="h6"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 black-3c85d square-a5" style="width: 58px; height: 58px" id="a5-7279-fc5d-5ee6-a91f-27e6-2451-0814-2e3d" data-square="a5">
-                          <div class="notation-322f9 numeric-fc462">5</div>
-                        </div>
-                        <div class="square-55d63 white-1e1d7 square-b5" style="width: 58px; height: 58px" id="b5-2813-c963-f2ee-4cef-ec65-9def-3cdf-b03f" data-square="b5"></div>
-                        <div class="square-55d63 black-3c85d square-c5" style="width: 58px; height: 58px" id="c5-6402-dce4-e259-7c81-ecb2-a36b-f804-9bc3" data-square="c5"></div>
-                        <div class="square-55d63 white-1e1d7 square-d5" style="width: 58px; height: 58px" id="d5-0ddb-a2af-c449-80b5-4c93-ddd7-b119-3344" data-square="d5"></div>
-                        <div class="square-55d63 black-3c85d square-e5" style="width: 58px; height: 58px" id="e5-555b-420f-5d28-3823-a1cb-bf41-a5d9-a67f" data-square="e5"></div>
-                        <div class="square-55d63 white-1e1d7 square-f5" style="width: 58px; height: 58px" id="f5-150a-f498-de30-789b-eed8-6243-1782-a78b" data-square="f5"></div>
-                        <div class="square-55d63 black-3c85d square-g5" style="width: 58px; height: 58px" id="g5-af0c-b6ea-9363-66e2-807c-dd2c-729a-6f4e" data-square="g5"></div>
-                        <div class="square-55d63 white-1e1d7 square-h5" style="width: 58px; height: 58px" id="h5-26f4-619b-cb61-e6b9-8d91-ca45-3c7a-3525" data-square="h5"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 white-1e1d7 square-a4" style="width: 58px; height: 58px" id="a4-338b-89eb-7c40-2cb2-3dea-f935-fac7-d14f" data-square="a4">
-                          <div class="notation-322f9 numeric-fc462">4</div>
-                        </div>
-                        <div class="square-55d63 black-3c85d square-b4" style="width: 58px; height: 58px" id="b4-e6af-d0bc-aed3-22f8-ce61-ab09-af90-380c" data-square="b4"></div>
-                        <div class="square-55d63 white-1e1d7 square-c4" style="width: 58px; height: 58px" id="c4-f7ef-3622-63db-96c7-91d0-768a-3663-e2e1" data-square="c4"></div>
-                        <div class="square-55d63 black-3c85d square-d4" style="width: 58px; height: 58px" id="d4-f9d2-4921-1467-04f9-f8e7-9528-2ad7-b504" data-square="d4"></div>
-                        <div class="square-55d63 white-1e1d7 square-e4" style="width: 58px; height: 58px" id="e4-b351-b9e8-026e-2065-077e-c086-bd6c-7687" data-square="e4"></div>
-                        <div class="square-55d63 black-3c85d square-f4" style="width: 58px; height: 58px" id="f4-fcc9-baef-01b5-e482-3a3f-14c7-9a04-dc65" data-square="f4"></div>
-                        <div class="square-55d63 white-1e1d7 square-g4" style="width: 58px; height: 58px" id="g4-0ddb-e908-4052-b209-df56-0f4f-0cd4-fa08" data-square="g4"></div>
-                        <div class="square-55d63 black-3c85d square-h4" style="width: 58px; height: 58px" id="h4-619c-e9f7-9a3c-8dfd-f28a-5416-b33d-f34d" data-square="h4"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 black-3c85d square-a3" style="width: 58px; height: 58px" id="a3-81be-b228-4349-fce3-d0b9-2762-e134-e95e" data-square="a3">
-                          <div class="notation-322f9 numeric-fc462">3</div>
-                        </div>
-                        <div class="square-55d63 white-1e1d7 square-b3" style="width: 58px; height: 58px" id="b3-c2ff-11bf-2de2-2851-4b4f-9eb2-6138-176e" data-square="b3"></div>
-                        <div class="square-55d63 black-3c85d square-c3" style="width: 58px; height: 58px" id="c3-b713-8b46-8a89-df42-c384-cd7b-b193-490e" data-square="c3"></div>
-                        <div class="square-55d63 white-1e1d7 square-d3" style="width: 58px; height: 58px" id="d3-8276-359f-f1a8-78b6-b7ed-a3cd-3c67-fd6c" data-square="d3"></div>
-                        <div class="square-55d63 black-3c85d square-e3" style="width: 58px; height: 58px" id="e3-1bc0-5729-3d98-ba70-bfc1-7dca-aa04-b0b8" data-square="e3"></div>
-                        <div class="square-55d63 white-1e1d7 square-f3" style="width: 58px; height: 58px" id="f3-f1f2-f11f-6683-26a9-c244-3f4a-c317-c6b5" data-square="f3"></div>
-                        <div class="square-55d63 black-3c85d square-g3" style="width: 58px; height: 58px" id="g3-3036-96ff-60d0-fbb4-9356-032a-11e5-2274" data-square="g3"></div>
-                        <div class="square-55d63 white-1e1d7 square-h3" style="width: 58px; height: 58px" id="h3-931f-c7c5-d74e-74bb-5cd5-201c-a5a5-46da" data-square="h3"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 white-1e1d7 square-a2" style="width: 58px; height: 58px" id="a2-0ceb-603e-eb8f-9a5a-c819-5600-6180-6924" data-square="a2">
-                          <div class="notation-322f9 numeric-fc462">2</div><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-b2" style="width: 58px; height: 58px" id="b2-0138-0610-88c9-52dd-ebd4-6871-ce71-c45e" data-square="b2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-c2" style="width: 58px; height: 58px" id="c2-5a1c-99d3-c89c-6173-4c74-a39a-8915-e2fe" data-square="c2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-d2" style="width: 58px; height: 58px" id="d2-f2cd-0318-bfe1-0449-bf3f-5d05-9489-caac" data-square="d2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-e2" style="width: 58px; height: 58px" id="e2-87a7-38ef-e013-8f5a-3e73-60f6-20bb-a241" data-square="e2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-f2" style="width: 58px; height: 58px" id="f2-5e04-4685-2b46-9469-164e-4d9c-4ef2-7462" data-square="f2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-g2" style="width: 58px; height: 58px" id="g2-bbfd-0ec4-bfa9-7116-afd3-7ff8-ba29-517b" data-square="g2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-h2" style="width: 58px; height: 58px" id="h2-fa6b-e21a-a6e2-7bfe-e28a-2082-29e5-f7ca" data-square="h2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
-                      <div class="row-5277c">
-                        <div class="square-55d63 black-3c85d square-a1" style="width: 58px; height: 58px" id="a1-ac86-0de0-d66e-e799-6cab-c299-d6d6-05dc" data-square="a1">
-                          <div class="notation-322f9 alpha-d2270">a</div>
-                          <div class="notation-322f9 numeric-fc462">1</div><img src="./assets/wR.png" alt="" class="piece-417db" data-piece="wR" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-b1" style="width: 58px; height: 58px" id="b1-208b-f929-b20d-73a3-4d31-1eb5-b850-fdcb" data-square="b1">
-                          <div class="notation-322f9 alpha-d2270">b</div><img src="./assets/wN.png" alt="" class="piece-417db" data-piece="wN" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-c1" style="width: 58px; height: 58px" id="c1-0f13-0e4b-f4dc-a44b-8111-4094-89c9-4640" data-square="c1">
-                          <div class="notation-322f9 alpha-d2270">c</div><img src="./assets/wB.png" alt="" class="piece-417db" data-piece="wB" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-d1" style="width: 58px; height: 58px" id="d1-c153-41eb-8b43-01d8-ad51-930d-5a3e-a77c" data-square="d1">
-                          <div class="notation-322f9 alpha-d2270">d</div><img src="./assets/wQ.png" alt="" class="piece-417db" data-piece="wQ" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-e1" style="width: 58px; height: 58px" id="e1-e540-8ecd-a999-d777-8ad0-4c77-e8a2-ae0c" data-square="e1">
-                          <div class="notation-322f9 alpha-d2270">e</div><img src="./assets/wK.png" alt="" class="piece-417db" data-piece="wK" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-f1" style="width: 58px; height: 58px" id="f1-ed91-51cc-5c33-d8ea-88f6-541a-84aa-15fa" data-square="f1">
-                          <div class="notation-322f9 alpha-d2270">f</div><img src="./assets/wB.png" alt="" class="piece-417db" data-piece="wB" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 black-3c85d square-g1" style="width: 58px; height: 58px" id="g1-f680-f26a-c57a-ea93-3a4f-d628-0dcb-9a9b" data-square="g1">
-                          <div class="notation-322f9 alpha-d2270">g</div><img src="./assets/wN.png" alt="" class="piece-417db" data-piece="wN" style="width: 58px;height: 58px;"></div>
-                        <div class="square-55d63 white-1e1d7 square-h1" style="width: 58px; height: 58px" id="h1-c6f4-76a6-b46b-a0e3-69c8-c1d2-ad22-1ebe" data-square="h1">
-                          <div class="notation-322f9 alpha-d2270">h</div><img src="./assets/wR.png" alt="" class="piece-417db" data-piece="wR" style="width: 58px;height: 58px;"></div>
-                        <div class="clearfix-7da63"></div>
-                      </div>
+            <div id="call_section" class="row">
+              <div class="column">
+                <div>
+                  <div class="ui segment">
+                    <div class="ui blue button" id="voice_call">
+                      Call
+                    </div>
+                    <div class="ui yellow button" id="cancel_call" style="display:none">
+                      Cancel
+                    </div>
+                    <div class="ui red button" id="end_call" style="display : none">
+                      End
                     </div>
                   </div>
-                </div>
-
-                <div>
-                  <div>
-                    <button id="chess_new_game">New Game</button>
-                    <button id="chess_flip_board">Flip Board</button>
+                  <div id="voice" style="display: none;">
+                    <audio id="their_voice" controls="" autoplay=""></audio>
                   </div>
                 </div>
-
               </div>
-              <div style="text-align:center;">
-                <br>
-                <div id="chess_status">White to move</div>
-              </div>
-            </section>
-
-
-          </div>
-        </div>
-
-
-        <!-- <div class="ui row">
-        <div class="column">
-          <h3>Simple Snake Game</h3>
-          <canvas id="stage" height="400" width="520" style="border: 2px solid rgb(151, 149,149);"></canvas>
-        </div>
-
-      </div> -->
-
-
-        <div class="ui row">
-          <div class="column">
-            <canvas id="snake" width="450" height="450"></canvas>
-            <div class="ui blue button" onclick=shouldStartGame()>Start</div>
-          </div>
-        </div>
-
-
-         <!-- <div class="row">
-          <div class="column">
-            <div>
-              <button id="prev">Previous</button>
-              <button id="next">Next</button> &nbsp; &nbsp;
-              <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
             </div>
 
-            <canvas id="pdf-holder"></canvas>
-          </div>
+            <div id="video_call_section" class="row">
+              <div class="column">
 
+                <div>
 
-          <script type="text/javascript">
-            // If absolute URL from the remote server is provided, configure the CORS
-            // header on that server.
-            var url = './a.pdf';
+                  <div class="ui segment">
+                    <div class="ui blue button" id="video_call">
+                      Video Call
+                    </div>
+                    <div class="ui yellow button" id="cancel_video_call" style="display:none">
+                      Cancel
+                    </div>
+                    <div class="ui red button" id="end_video_call" style="display : none">
+                      End
+                    </div>
+                  </div>
+                  <video id="their-video" width="50%" height="50%" style="z-index: 5; position: relative; margin-left: auto; margin-right: auto;" autoplay=""></video>
+                  <div id="my-video-div">
+                    <video id="my-video" muted="true" width="180" height="120" autoplay=""></video>
+                  </div>
 
-            // The workerSrc property shall be specified.
-            PDFJS.workerSrc = './pdf.worker.js';
-
-            var pdfDoc = null,
-              pageNum = 1,
-              pageRendering = false,
-              pageNumPending = null,
-              scale = 1.3,
-              canvas = document.getElementById('pdf-holder'),
-              ctx = canvas.getContext('2d');
-
-            /**
-             * Get page info from document, resize canvas accordingly, and render page.
-             * @param num Page number.
-             */
-            function renderPage(num) {
-              pageRendering = true;
-              // Using promise to fetch the page
-              pdfDoc.getPage(num).then(function(page) {
-                var viewport = page.getViewport(scale);
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                // canvas.height="1000";
-                // canvas.width="800";
-
-                // Render PDF page into canvas context
-                var renderContext = {
-                  canvasContext: ctx,
-                  viewport: viewport
-                };
-                var renderTask = page.render(renderContext);
-
-                // Wait for rendering to finish
-                renderTask.promise.then(function() {
-                  pageRendering = false;
-                  if (pageNumPending !== null) {
-                    // New page rendering is pending
-                    renderPage(pageNumPending);
-                    pageNumPending = null;
-                  }
-                });
-              });
-
-              // Update page counters
-              document.getElementById('page_num').textContent = pageNum;
-            }
-
-            /**
-             * If another page rendering in progress, waits until the rendering is
-             * finised. Otherwise, executes rendering immediately.
-             */
-            function queueRenderPage(num) {
-              if (pageRendering) {
-                pageNumPending = num;
-              } else {
-                renderPage(num);
-              }
-            }
-
-            /**
-             * Displays previous page.
-             */
-            function onPrevPage() {
-              if (pageNum <= 1) {
-                return;
-              }
-              pageNum--;
-              queueRenderPage(pageNum);
-            }
-            document.getElementById('prev').addEventListener('click', onPrevPage);
-
-            /**
-             * Displays next page.
-             */
-            function onNextPage() {
-              if (pageNum >= pdfDoc.numPages) {
-                return;
-              }
-              pageNum++;
-              queueRenderPage(pageNum);
-            }
-            document.getElementById('next').addEventListener('click', onNextPage);
-
-            /**
-             * Asynchronously downloads PDF.
-             */
-            PDFJS.getDocument(url).then(function(pdfDoc_) {
-              pdfDoc = pdfDoc_;
-              document.getElementById('page_count').textContent = pdfDoc.numPages;
-
-              // Initial/first page rendering
-              renderPage(pageNum);
-            });
-          </script>
-        </div> -->
-
-
-
-
-        <div class="row" style="padding-top:30px">
-          <div class="column">
-            <div class="ui blue inverted segment">
-              <h2>Send File</h2>
+                </div>
+              </div>
             </div>
 
-            <div class="ui segment">
-              <div>
-                <label for="pdfLoader" class="ui icon blue button">
+
+            <div id="game_section">
+            <div class="row">
+              <div class="column">
+
+
+                <section id="chess_section">
+                  <div style="text-align:center">
+                    <h1>Play Chess</h1>
+                  </div>
+                  <div id="board_div" align="center">
+                    <div id="board" style="width:500px;">
+                      <div class="chessboard-63f37">
+                        <div class="board-b72b1" style="width: 464px;">
+                          <div class="row-5277c">
+                            <div class="square-55d63 white-1e1d7 square-a8" style="width: 58px; height: 58px" id="a8-bdb3-0f88-1b32-8c35-8470-fb7e-39b0-7325" data-square="a8">
+                              <div class="notation-322f9 numeric-fc462">8</div><img src="./assets/bR.png" alt="" class="piece-417db" data-piece="bR" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-b8" style="width: 58px; height: 58px" id="b8-8c97-8044-0ae2-1a5b-e4ad-451d-1bae-9e82" data-square="b8"><img src="./assets/bN.png" alt="" class="piece-417db" data-piece="bN" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-c8" style="width: 58px; height: 58px" id="c8-7d1c-e456-d1da-1544-4f58-7b14-f071-c6d9" data-square="c8"><img src="./assets/bB.png" alt="" class="piece-417db" data-piece="bB" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-d8" style="width: 58px; height: 58px" id="d8-9e26-dc7c-9b21-d13d-2dbd-5c9b-4803-acca" data-square="d8"><img src="./assets/bQ.png" alt="" class="piece-417db" data-piece="bQ" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-e8" style="width: 58px; height: 58px" id="e8-f411-6f3a-2d46-c312-0b51-22dd-6902-641b" data-square="e8"><img src="./assets/bK.png" alt="" class="piece-417db" data-piece="bK" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-f8" style="width: 58px; height: 58px" id="f8-f0c6-0d41-c1c1-c0e5-e9f9-bdd3-e01d-9d01" data-square="f8"><img src="./assets/bB.png" alt="" class="piece-417db" data-piece="bB" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-g8" style="width: 58px; height: 58px" id="g8-55cf-e39a-906b-1bda-ca38-a63a-a5ca-ea88" data-square="g8"><img src="./assets/bN.png" alt="" class="piece-417db" data-piece="bN" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-h8" style="width: 58px; height: 58px" id="h8-7b3e-133f-3e13-3a3c-7959-afae-7121-1067" data-square="h8"><img src="./assets/bR.png" alt="" class="piece-417db" data-piece="bR" style="width: 58px;height: 58px;"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 black-3c85d square-a7" style="width: 58px; height: 58px" id="a7-c64a-3157-e5bd-4bd3-1b56-792f-fd45-fd30" data-square="a7">
+                              <div class="notation-322f9 numeric-fc462">7</div><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-b7" style="width: 58px; height: 58px" id="b7-c37a-47ed-a971-c3e5-52cc-d99d-2b0a-1153" data-square="b7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-c7" style="width: 58px; height: 58px" id="c7-1ceb-49bd-cdd3-db74-da36-0214-d29f-9a2e" data-square="c7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-d7" style="width: 58px; height: 58px" id="d7-0d43-cfa1-1b77-e80f-a37c-55c9-2715-4f6b" data-square="d7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-e7" style="width: 58px; height: 58px" id="e7-6f54-03f0-cde1-0aae-6af9-05f0-6eed-d293" data-square="e7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-f7" style="width: 58px; height: 58px" id="f7-5de3-aab0-48bb-a072-6317-1bc5-b7ca-1ac9" data-square="f7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-g7" style="width: 58px; height: 58px" id="g7-28ad-c10f-79d9-85c6-22de-3764-0d53-0b03" data-square="g7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-h7" style="width: 58px; height: 58px" id="h7-db30-a90d-5b68-17c8-9852-77be-b16b-53b5" data-square="h7"><img src="./assets/bP.png" alt="" class="piece-417db" data-piece="bP" style="width: 58px;height: 58px;"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 white-1e1d7 square-a6" style="width: 58px; height: 58px" id="a6-46a1-91c8-9964-453c-4b70-9fa0-b497-8384" data-square="a6">
+                              <div class="notation-322f9 numeric-fc462">6</div>
+                            </div>
+                            <div class="square-55d63 black-3c85d square-b6" style="width: 58px; height: 58px" id="b6-8742-ab51-50f4-f164-0c40-754f-2dac-e6ca" data-square="b6"></div>
+                            <div class="square-55d63 white-1e1d7 square-c6" style="width: 58px; height: 58px" id="c6-4dd9-60cc-691b-3b83-778f-ffc1-f7e9-e480" data-square="c6"></div>
+                            <div class="square-55d63 black-3c85d square-d6" style="width: 58px; height: 58px" id="d6-49a9-752c-b120-06bf-21b7-2125-c31e-cc0d" data-square="d6"></div>
+                            <div class="square-55d63 white-1e1d7 square-e6" style="width: 58px; height: 58px" id="e6-6cc1-b097-f204-917b-3154-f998-80ae-3677" data-square="e6"></div>
+                            <div class="square-55d63 black-3c85d square-f6" style="width: 58px; height: 58px" id="f6-bc03-b8c5-7f85-faf7-2295-d014-b23b-320d" data-square="f6"></div>
+                            <div class="square-55d63 white-1e1d7 square-g6" style="width: 58px; height: 58px" id="g6-e349-3017-937e-1fbe-31ff-448c-d6a8-b8fa" data-square="g6"></div>
+                            <div class="square-55d63 black-3c85d square-h6" style="width: 58px; height: 58px" id="h6-488b-4d02-ad5e-831d-622c-0e06-6011-f877" data-square="h6"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 black-3c85d square-a5" style="width: 58px; height: 58px" id="a5-7279-fc5d-5ee6-a91f-27e6-2451-0814-2e3d" data-square="a5">
+                              <div class="notation-322f9 numeric-fc462">5</div>
+                            </div>
+                            <div class="square-55d63 white-1e1d7 square-b5" style="width: 58px; height: 58px" id="b5-2813-c963-f2ee-4cef-ec65-9def-3cdf-b03f" data-square="b5"></div>
+                            <div class="square-55d63 black-3c85d square-c5" style="width: 58px; height: 58px" id="c5-6402-dce4-e259-7c81-ecb2-a36b-f804-9bc3" data-square="c5"></div>
+                            <div class="square-55d63 white-1e1d7 square-d5" style="width: 58px; height: 58px" id="d5-0ddb-a2af-c449-80b5-4c93-ddd7-b119-3344" data-square="d5"></div>
+                            <div class="square-55d63 black-3c85d square-e5" style="width: 58px; height: 58px" id="e5-555b-420f-5d28-3823-a1cb-bf41-a5d9-a67f" data-square="e5"></div>
+                            <div class="square-55d63 white-1e1d7 square-f5" style="width: 58px; height: 58px" id="f5-150a-f498-de30-789b-eed8-6243-1782-a78b" data-square="f5"></div>
+                            <div class="square-55d63 black-3c85d square-g5" style="width: 58px; height: 58px" id="g5-af0c-b6ea-9363-66e2-807c-dd2c-729a-6f4e" data-square="g5"></div>
+                            <div class="square-55d63 white-1e1d7 square-h5" style="width: 58px; height: 58px" id="h5-26f4-619b-cb61-e6b9-8d91-ca45-3c7a-3525" data-square="h5"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 white-1e1d7 square-a4" style="width: 58px; height: 58px" id="a4-338b-89eb-7c40-2cb2-3dea-f935-fac7-d14f" data-square="a4">
+                              <div class="notation-322f9 numeric-fc462">4</div>
+                            </div>
+                            <div class="square-55d63 black-3c85d square-b4" style="width: 58px; height: 58px" id="b4-e6af-d0bc-aed3-22f8-ce61-ab09-af90-380c" data-square="b4"></div>
+                            <div class="square-55d63 white-1e1d7 square-c4" style="width: 58px; height: 58px" id="c4-f7ef-3622-63db-96c7-91d0-768a-3663-e2e1" data-square="c4"></div>
+                            <div class="square-55d63 black-3c85d square-d4" style="width: 58px; height: 58px" id="d4-f9d2-4921-1467-04f9-f8e7-9528-2ad7-b504" data-square="d4"></div>
+                            <div class="square-55d63 white-1e1d7 square-e4" style="width: 58px; height: 58px" id="e4-b351-b9e8-026e-2065-077e-c086-bd6c-7687" data-square="e4"></div>
+                            <div class="square-55d63 black-3c85d square-f4" style="width: 58px; height: 58px" id="f4-fcc9-baef-01b5-e482-3a3f-14c7-9a04-dc65" data-square="f4"></div>
+                            <div class="square-55d63 white-1e1d7 square-g4" style="width: 58px; height: 58px" id="g4-0ddb-e908-4052-b209-df56-0f4f-0cd4-fa08" data-square="g4"></div>
+                            <div class="square-55d63 black-3c85d square-h4" style="width: 58px; height: 58px" id="h4-619c-e9f7-9a3c-8dfd-f28a-5416-b33d-f34d" data-square="h4"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 black-3c85d square-a3" style="width: 58px; height: 58px" id="a3-81be-b228-4349-fce3-d0b9-2762-e134-e95e" data-square="a3">
+                              <div class="notation-322f9 numeric-fc462">3</div>
+                            </div>
+                            <div class="square-55d63 white-1e1d7 square-b3" style="width: 58px; height: 58px" id="b3-c2ff-11bf-2de2-2851-4b4f-9eb2-6138-176e" data-square="b3"></div>
+                            <div class="square-55d63 black-3c85d square-c3" style="width: 58px; height: 58px" id="c3-b713-8b46-8a89-df42-c384-cd7b-b193-490e" data-square="c3"></div>
+                            <div class="square-55d63 white-1e1d7 square-d3" style="width: 58px; height: 58px" id="d3-8276-359f-f1a8-78b6-b7ed-a3cd-3c67-fd6c" data-square="d3"></div>
+                            <div class="square-55d63 black-3c85d square-e3" style="width: 58px; height: 58px" id="e3-1bc0-5729-3d98-ba70-bfc1-7dca-aa04-b0b8" data-square="e3"></div>
+                            <div class="square-55d63 white-1e1d7 square-f3" style="width: 58px; height: 58px" id="f3-f1f2-f11f-6683-26a9-c244-3f4a-c317-c6b5" data-square="f3"></div>
+                            <div class="square-55d63 black-3c85d square-g3" style="width: 58px; height: 58px" id="g3-3036-96ff-60d0-fbb4-9356-032a-11e5-2274" data-square="g3"></div>
+                            <div class="square-55d63 white-1e1d7 square-h3" style="width: 58px; height: 58px" id="h3-931f-c7c5-d74e-74bb-5cd5-201c-a5a5-46da" data-square="h3"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 white-1e1d7 square-a2" style="width: 58px; height: 58px" id="a2-0ceb-603e-eb8f-9a5a-c819-5600-6180-6924" data-square="a2">
+                              <div class="notation-322f9 numeric-fc462">2</div><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-b2" style="width: 58px; height: 58px" id="b2-0138-0610-88c9-52dd-ebd4-6871-ce71-c45e" data-square="b2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-c2" style="width: 58px; height: 58px" id="c2-5a1c-99d3-c89c-6173-4c74-a39a-8915-e2fe" data-square="c2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-d2" style="width: 58px; height: 58px" id="d2-f2cd-0318-bfe1-0449-bf3f-5d05-9489-caac" data-square="d2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-e2" style="width: 58px; height: 58px" id="e2-87a7-38ef-e013-8f5a-3e73-60f6-20bb-a241" data-square="e2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-f2" style="width: 58px; height: 58px" id="f2-5e04-4685-2b46-9469-164e-4d9c-4ef2-7462" data-square="f2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-g2" style="width: 58px; height: 58px" id="g2-bbfd-0ec4-bfa9-7116-afd3-7ff8-ba29-517b" data-square="g2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-h2" style="width: 58px; height: 58px" id="h2-fa6b-e21a-a6e2-7bfe-e28a-2082-29e5-f7ca" data-square="h2"><img src="./assets/wP.png" alt="" class="piece-417db" data-piece="wP" style="width: 58px;height: 58px;"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                          <div class="row-5277c">
+                            <div class="square-55d63 black-3c85d square-a1" style="width: 58px; height: 58px" id="a1-ac86-0de0-d66e-e799-6cab-c299-d6d6-05dc" data-square="a1">
+                              <div class="notation-322f9 alpha-d2270">a</div>
+                              <div class="notation-322f9 numeric-fc462">1</div><img src="./assets/wR.png" alt="" class="piece-417db" data-piece="wR" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-b1" style="width: 58px; height: 58px" id="b1-208b-f929-b20d-73a3-4d31-1eb5-b850-fdcb" data-square="b1">
+                              <div class="notation-322f9 alpha-d2270">b</div><img src="./assets/wN.png" alt="" class="piece-417db" data-piece="wN" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-c1" style="width: 58px; height: 58px" id="c1-0f13-0e4b-f4dc-a44b-8111-4094-89c9-4640" data-square="c1">
+                              <div class="notation-322f9 alpha-d2270">c</div><img src="./assets/wB.png" alt="" class="piece-417db" data-piece="wB" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-d1" style="width: 58px; height: 58px" id="d1-c153-41eb-8b43-01d8-ad51-930d-5a3e-a77c" data-square="d1">
+                              <div class="notation-322f9 alpha-d2270">d</div><img src="./assets/wQ.png" alt="" class="piece-417db" data-piece="wQ" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-e1" style="width: 58px; height: 58px" id="e1-e540-8ecd-a999-d777-8ad0-4c77-e8a2-ae0c" data-square="e1">
+                              <div class="notation-322f9 alpha-d2270">e</div><img src="./assets/wK.png" alt="" class="piece-417db" data-piece="wK" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-f1" style="width: 58px; height: 58px" id="f1-ed91-51cc-5c33-d8ea-88f6-541a-84aa-15fa" data-square="f1">
+                              <div class="notation-322f9 alpha-d2270">f</div><img src="./assets/wB.png" alt="" class="piece-417db" data-piece="wB" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 black-3c85d square-g1" style="width: 58px; height: 58px" id="g1-f680-f26a-c57a-ea93-3a4f-d628-0dcb-9a9b" data-square="g1">
+                              <div class="notation-322f9 alpha-d2270">g</div><img src="./assets/wN.png" alt="" class="piece-417db" data-piece="wN" style="width: 58px;height: 58px;"></div>
+                            <div class="square-55d63 white-1e1d7 square-h1" style="width: 58px; height: 58px" id="h1-c6f4-76a6-b46b-a0e3-69c8-c1d2-ad22-1ebe" data-square="h1">
+                              <div class="notation-322f9 alpha-d2270">h</div><img src="./assets/wR.png" alt="" class="piece-417db" data-piece="wR" style="width: 58px;height: 58px;"></div>
+                            <div class="clearfix-7da63"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div>
+                        <button id="chess_new_game">New Game</button>
+                        <button id="chess_flip_board">Flip Board</button>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div style="text-align:center;">
+                    <br>
+                    <div id="chess_status">White to move</div>
+                  </div>
+                </section>
+
+
+              </div>
+            </div>
+
+            <div class="ui row">
+              <div class="column">
+                <canvas id="snake" width="450" height="450"></canvas>
+                <div class="ui blue button" onclick=shouldStartGame()>Start</div>
+              </div>
+            </div>
+
+          </div>
+
+            <div id="pdf_section" class="row" style="padding-top:30px">
+              <div class="column">
+                <div class="ui blue inverted segment">
+                  <h2>PDF Share</h2>
+                </div>
+
+                <div class="ui segment">
+                  <div>
+                    <label for="pdfLoader" class="ui icon blue button">
         <i class="file icon"></i>
         Load Pdf</label>
-                <input type="file" id="pdfLoader" style="display:none" onchange="loadPdf(event)">
+                    <input type="file" id="pdfLoader" style="display:none" onchange="loadPdf(event)">
+                  </div>
+
+
+
+                  <div>
+                    <button id="prev">Previous</button>
+                    <button id="next">Next</button> &nbsp; &nbsp;
+                    <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
+                  </div>
+
+
+
+                  <canvas id="pdf-holder-new"></canvas>
+
+                </div>
               </div>
-
-
-
-              <div>
-                <button id="prev">Previous</button>
-                <button id="next">Next</button> &nbsp; &nbsp;
-                <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
-              </div>
-
-
-
-              <canvas id="pdf-holder-new"></canvas>
 
             </div>
-
-
-
-
-
           </div>
 
-          <script>
-          function loadPdf(event){
-            console.log("Hi");
-            var input = event.target;
-            var pdfFile=input.files[0];
 
-//
-//             console.log(input);
-//             console.log(pdfFile);
-//             console.log("Hi");
-//
-              var reader = new FileReader();
-
-              function uint8ToString(buf) {
-    var i, length, out = '';
-    for (i = 0, length = buf.length; i < length; i += 1) {
-        out += String.fromCharCode(buf[i]);
-    }
-    return out;
-}
-
-
-              reader.onload = function() {
-                arrayBuffer = reader.result;
-               console.log(arrayBuffer);
-                buffer_array = new Uint8Array(arrayBuffer);
-
-                blob_data_send({pdfcontent:buffer_array});
-              // console.log(buffer_array);
-                // var pdfBlob = new Blob(buffer_array, {type: "application/pdf"});
-                // //console.log(pdfBlob);
-                // var pdf_url = window.URL.createObjectURL(pdfBlob);
-                // console.log(uint8ToString(buffer_array));
-                var base64 = uint8ToString(buffer_array);
-
-
-                console.log("Done");
-
-                var purl = base64;
-                // console.log(purl);
-
-
-                //purl="./a.pdf"
-
-
-
-                var pdfData = purl;
-
-    // Disable workers to avoid yet another cross-origin issue (workers need
-    // the URL of the script to be loaded, and dynamically loading a cross-origin
-    // script does not work).
-    // PDFJS.disableWorker = true;
-
-    // The workerSrc property shall be specified.
-    PDFJS.workerSrc = './pdf.worker.js';
-
-    var pdfDoc = null,
-      pageNum = 1,
-      pageRendering = false,
-      pageNumPending = null,
-      scale = 1.5,
-      canvas = document.getElementById('pdf-holder-new'),
-      ctx = canvas.getContext('2d');
-
-    /**
-     * Get page info from document, resize canvas accordingly, and render page.
-     * @param num Page number.
-     */
-    function renderPage(num) {
-      pageRendering = true;
-      // Using promise to fetch the page
-      pdfDoc.getPage(num).then(function(page) {
-        var viewport = page.getViewport(scale);
-        canvas.height = viewport.height;
-        canvas.width = viewport.width;
-
-        // canvas.height="1000";
-        // canvas.width="800";
-
-        // Render PDF page into canvas context
-        var renderContext = {
-          canvasContext: ctx,
-          viewport: viewport
-        };
-        var renderTask = page.render(renderContext);
-
-        // Wait for rendering to finish
-        renderTask.promise.then(function() {
-          pageRendering = false;
-          if (pageNumPending !== null) {
-            // New page rendering is pending
-            renderPage(pageNumPending);
-            pageNumPending = null;
-          }
-        });
-      });
-
-      // Update page counters
-      document.getElementById('page_num').textContent = pageNum;
-    }
-
-    /**
-     * If another page rendering in progress, waits until the rendering is
-     * finised. Otherwise, executes rendering immediately.
-     */
-    function queueRenderPage(num) {
-      if (pageRendering) {
-        pageNumPending = num;
-      } else {
-        renderPage(num);
-      }
-    }
-
-    /**
-     * Displays previous page.
-     */
-    function onPrevPage() {
-      if (pageNum <= 1) {
-        return;
-      }
-      pageNum--;
-      queueRenderPage(pageNum);
-    }
-    document.getElementById('prev').addEventListener('click', onPrevPage);
-
-    /**
-     * Displays next page.
-     */
-    function onNextPage() {
-      if (pageNum >= pdfDoc.numPages) {
-        return;
-      }
-      pageNum++;
-      queueRenderPage(pageNum);
-    }
-    document.getElementById('next').addEventListener('click', onNextPage);
-
-    /**
-     * Asynchronously downloads PDF.
-     */
-    PDFJS.getDocument({data:pdfData}).then(function(pdfDoc_) {
-      pdfDoc = pdfDoc_;
-      document.getElementById('page_count').textContent = pdfDoc.numPages;
-
-      // Initial/first page rendering
-      renderPage(pageNum);
-    });
-
-
-              };
-
-              reader.readAsArrayBuffer(input.files[0].slice(0, pdfFile.size));
-              //
-
-
-
-
-        }
-          </script>
-
-
+          <div class="shout_box">
+            <div class="header">Text Chat
+              <span class="badge" id="unread_badge"></span>
+              <span id="typing_msg" style="display: none;">typing</span>
+              <div class="open_btn">&nbsp;</div>
+            </div>
+            <div class="toggle_chat" style="display: none;">
+              <div class="message_box"></div>
+              <div class="user_info">
+                <input name="shout_message" id="shout_message" type="text" placeholder="Type Message Here">
+              </div>
+            </div>
+          </div>
 
         </div>
-  </div>
 
-    </div>
 
-    <div class="shout_box">
-      <div class="header">Text Chat
-        <span class="badge" id="unread_badge"></span>
-        <span id="typing_msg" style="display: none;">typing</span>
-        <!-- <div class="open_btn">&nbsp;</div> -->
-      </div>
-      <div class="toggle_chat" style="display: none;">
-        <div class="message_box"></div>
-        <div class="user_info">
-          <input name="shout_message" id="shout_message" type="text" placeholder="Type Message Here">
-        </div>
-      </div>
-    </div>
 
-    <div/>
+        <div/>
+
+        <!-- </div> -->
 
 
 
         <script type="text/javascript" src="./peer.js"></script>
         <script type="text/javascript" src="./responsivevoice.js"></script>
         <script type="text/javascript" src="./dataProcess.js"></script>
+        <script type="text/javascript" src="./sideBarSwitcher.js"></script>
+
 
         <script type="text/javascript" src="./connection.js"></script>
         <script type="text/javascript" src="./chessboard.js"></script>
@@ -699,7 +527,9 @@
         <script src="/socket.io-client/dist/socket.io.js"></script>
         <script src="/particles.js/particles.js"></script>
         <script type="text/javascript" src="/particlesEmbed.js"></script>
+        <script type="text/javascript" src="/pdfLoader.js"></script>
         <script src="/semantic-ui/dist/semantic.min.js"></script>
+
 
 
 
@@ -716,7 +546,14 @@
           }
         </script>
 
-        <script type="text/paperscript" src="./draw.js" canvas="canvas">
+        <script type="text/paperscript" src="./draw.js" canvas="canvas" data-script-scope="add"></script>
+
+
+
+
+        <script type="text/paperscript" src="./draw.js" canvas="pdf-holder-new" data-script-scope="add"></script>
+
+
 
 </body>
 

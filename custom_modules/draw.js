@@ -41,13 +41,7 @@ function onMouseUp(event) {
 	path.simplify();
   console.log(path.exportJSON());
   if(efficient==false) {send('{"new_line":"true"}');}
-  else{send(path.exportJSON());
-}
-
-
-
-
-
+  else{send(path.exportJSON());}
 }
 
 

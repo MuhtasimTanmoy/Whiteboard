@@ -36,6 +36,17 @@ var partner_file_type;
 var partner_file_name;
 var partner_file_array;
 
+
+var pdfDoc = null;
+var pageNum = 1;
+var pageRendering = false;
+var pageNumPending = null;
+
+var scale = 1.5,
+canvas = document.getElementById('pdf-holder-new'),
+ctx = canvas.getContext('2d');
+
+
 //////////////////////////Snake_game////////////
 var snake_upperPlayer;
 var d;
@@ -85,7 +96,9 @@ var peer = new Peer(name, {host: 'localhost', port: 9000,debug:3, path: '/',conf
 
 console.log(peer.id + " started.");
 
-$('#myId').html("My id: <h1>" + peer.id + "</h1>");
+$('#myId').html("<h3 > Id: " + peer.id + "</h3>");
+////debug
+showDashBoard();
 
 //////////Connection for client////////////////////
 
@@ -102,6 +115,17 @@ peer.on('connection', function(conn) {
 
     $('div.left.icon').hide();
     $("#disconnect").show();
+
+
+    ///transition
+    var elem = document.getElementById("showOnConnect");
+    elem.style.display="block";
+    elem = document.getElementById("particleHolder");
+    elem.style.display="none";
+    showDashBoard();
+
+
+
   } else if (conn.metadata == "blob") {
     blobConnection = conn;
 
@@ -258,6 +282,17 @@ function connectionStart(partnerId) {
 
     $('div.left.icon').hide();
     $("#disconnect").show();
+
+
+
+    ///transition
+    var elem = document.getElementById("showOnConnect");
+    elem.style.display="block";
+    elem = document.getElementById("particleHolder");
+    elem.style.display="none";
+    showDashBoard();
+
+
     receiveData();
   });
 
@@ -304,6 +339,7 @@ $('#partner').keyup(function(event) {
     var partnerId = $('#partner').val();
     $('#partner').val("");
     connectionStart(partnerId);
+
     //ui change
   }
 })

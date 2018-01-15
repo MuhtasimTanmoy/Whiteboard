@@ -22,7 +22,13 @@ var options = {
 
 app.get('/', function(req, res,next) {
     res.sendFile(__dirname + '/index.html');
+
 });
+
+// app.get('/:tagId', function(req, res) {
+//   // res.send("tagId is set to " + req.params.tagId);
+//   res.sendFile(__dirname + '/test.html');
+// });
 // io.on('connection', function(client) {
 //     console.log('Hello..tan.');
 //
