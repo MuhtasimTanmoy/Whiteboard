@@ -106,10 +106,10 @@ window.clearIt=function(){
 
     });
 
-    var textItem = new PointText(new Point(10, 20));
-    textItem.fillColor = 'black';
-
-    textItem.content = 'Click and drag to draw a line.';
+    // var textItem = new PointText(new Point(10, 20));
+    // textItem.fillColor = 'black';
+    //
+    // textItem.content = 'Click and drag to draw a line.';
 }
 
 window.toggleMode=function(){

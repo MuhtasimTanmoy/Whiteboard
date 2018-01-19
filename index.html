@@ -295,11 +295,11 @@
           </div>
           <div class="ui blue button" onclick=test()>Test</div>
         </div> -->
-            <div id="canvas_section" class="row">
+            <div id="canvas_section" class="row" style="margin-left:40px">
               <div class="column">
                 <section id="draw">
                   <div class="row" style="padding-top: 20px">
-                    <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1046" height="553" data-paper-scope="1">
+                    <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1290" height="553" data-paper-scope="1">
               </canvas>
 
                     <div class="ui button blue" id="drawMode" onCLick=toggleMode()>Point Mode</div>
@@ -312,10 +312,6 @@
 
             <div id="dropbox_section" class="row" style="padding-top:30px">
               <div class="column">
-                <div class="ui blue inverted segment">
-                  <h2>Send File</h2>
-                </div>
-
                 <div class="ui segment">
                   <div>
                     <label for="file" class="ui icon blue button">
@@ -419,46 +415,46 @@
             <div id="game_section" style="width:100%;padding-left:22%;paddingTop:20px">
 
 
-            <div class="ui grid" id="gameContent">
-              <div class="cardItem">
-                <div class="cardHover" onclick="showChess()">
+              <div class="ui grid" id="gameContent">
+                <div class="cardItem">
+                  <div class="cardHover" onclick="showChess()">
 
-                  <div class="content" style="text-align:center;padding:20px">
-                    <div class="ui image " style="height:100px">
-                      <div>
-                        <i class="file pdf outline large icon" style="color:#3f3f3f"></i>
+                    <div class="content" style="text-align:center;padding:20px">
+                      <div class="ui image " style="height:100px">
+                        <div>
+                          <i class="file pdf outline large icon" style="color:#3f3f3f"></i>
+                        </div>
                       </div>
-                    </div>
-                    <div style="padding-bottom:20px">
-                      <a class="header highlightHeader">
+                      <div style="padding-bottom:20px">
+                        <a class="header highlightHeader">
                     Chess
                   </a>
-                    </div>
-                  </div>
-
-
-                </div>
-              </div>
-
-              <div class="cardItem">
-                <div class="cardHover" onclick="showSnake()">
-
-                  <div class="content" style="text-align:center;padding:20px">
-                    <div class="ui image " style="height:100px">
-                      <div>
-                        <i class="file pdf outline large icon" style="color:#3f3f3f"></i>
                       </div>
                     </div>
-                    <div style="padding-bottom:20px">
-                      <a class="header highlightHeader">
+
+
+                  </div>
+                </div>
+
+                <div class="cardItem">
+                  <div class="cardHover" onclick="showSnake()">
+
+                    <div class="content" style="text-align:center;padding:20px">
+                      <div class="ui image " style="height:100px">
+                        <div>
+                          <i class="file pdf outline large icon" style="color:#3f3f3f"></i>
+                        </div>
+                      </div>
+                      <div style="padding-bottom:20px">
+                        <a class="header highlightHeader">
                     Duel Snake
                   </a>
+                      </div>
                     </div>
+
+
                   </div>
-
-
                 </div>
-              </div>
 
               </div>
 
@@ -467,9 +463,6 @@
 
 
                   <section id="chess_section">
-                    <div style="text-align:center">
-                      <h1>Play Chess</h1>
-                    </div>
                     <div id="board_div" align="center">
                       <div id="board" style="width:500px;">
                         <div class="chessboard-63f37">
@@ -622,53 +615,53 @@
                     <div class="ten wide column">
                       <canvas id="pdf-holder-new" style="float:left,padding-left:10px"></canvas>
                     </div>
-  <div class="six wide column" style="background:#fff">
-    <div class="ui segment">
-      <div>
-        <label for="pdfLoader" class="ui icon grey button">
+                    <div class="six wide column" style="background:#fff">
+                      <div class="ui segment">
+                        <div>
+                          <label for="pdfLoader" class="ui icon grey button">
   <i class="file icon"></i>
   Open Pdf</label>
-        <input type="file" id="pdfLoader" style="display:none" onchange="loadPdf(event)">
-      </div>
-      <div>
+                          <input type="file" id="pdfLoader" style="display:none" onchange="loadPdf(event)">
+                        </div>
+                        <div>
 
 
 
-        <!-- <button id="prev">Previous</button>
+                          <!-- <button id="prev">Previous</button>
         <button id="next">Next</button> &nbsp; &nbsp; -->
-        <!-- <button onclick="setScale(1.6)">TestPurpose</button> -->
-      </div>
-    </div>
+                          <!-- <button onclick="setScale(1.6)">TestPurpose</button> -->
+                        </div>
+                      </div>
 
-    <div class="ui segment" style="margin-top:20%">
-      <i class="minus big icon backButton" onclick="decrementScale()"></i>
-      <i class="plus big icon backButton" onclick="setScale(.8)"></i>
-    </div>
+                      <div class="ui segment" style="margin-top:20%">
+                        <i class="minus big icon backButton" onclick="decrementScale()"></i>
+                        <i class="plus big icon backButton" onclick="setScale(.8)"></i>
+                      </div>
 
-    <div class="ui segment" style="margin-top:20%">
-      <div>
-        <div class="ui content" style="margin-bottom:10px" >
-          <span id="page_num"></span> / <span id="page_count"></span>
-        </div>
-        <!-- <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span> -->
+                      <div class="ui segment" style="margin-top:20%">
+                        <div>
+                          <div class="ui content" style="margin-bottom:10px">
+                            <span id="page_num"></span> / <span id="page_count"></span>
+                          </div>
+                          <!-- <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span> -->
 
-      </div>
-      <div>
+                        </div>
+                        <div>
 
-              <i class="chevron left  big icon backButton" id="prev" ></i>
-              <i class="chevron right big icon backButton" id="next"></i>
-      </div>
+                          <i class="chevron left  big icon backButton" id="prev"></i>
+                          <i class="chevron right big icon backButton" id="next"></i>
+                        </div>
 
-    </div>
+                      </div>
 
-  </div>
+                    </div>
 
                   </div>
 
 
                 </div>
 
-                </div>
+              </div>
 
 
             </div>
