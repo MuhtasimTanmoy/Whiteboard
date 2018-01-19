@@ -49,6 +49,8 @@ var pdfData;
 
 var scaleFixer=scale;
 
+var currentlyIn="DashBoard";
+
 
 //////////////////////////Snake_game////////////
 var snake_upperPlayer;
@@ -111,7 +113,7 @@ peer.on('connection', function(conn) {
 
     connection = conn;
 
-    $("#connect_notify").html("Connected to: "+connection.peer);
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' in '+ currentlyIn +' </h3>');
 
     console.log(connection.peer + " Connected");
     receiveData();
@@ -122,6 +124,8 @@ peer.on('connection', function(conn) {
 
     ///transition
     var elem = document.getElementById("showOnConnect");
+    elem.style.display="block";
+    elem = document.getElementById("sideBarContent");
     elem.style.display="block";
     elem = document.getElementById("particleHolder");
     elem.style.display="none";
@@ -278,7 +282,7 @@ function connectionStart(partnerId) {
 
   connection.on('open', function() {
   clearTimeout(connect_timeout);
-    $("#connect_notify").html('<span style="color:green;">Connected to: </span>'+connection.peer);
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' > '+ currentlyIn +'</h3>');
 
     console.log("Connection open");
     console.log(connection);
@@ -290,6 +294,8 @@ function connectionStart(partnerId) {
 
     ///transition
     var elem = document.getElementById("showOnConnect");
+    elem.style.display="block";
+    elem = document.getElementById("sideBarContent");
     elem.style.display="block";
     elem = document.getElementById("particleHolder");
     elem.style.display="none";
@@ -320,6 +326,14 @@ function receiveData() {
     console.log("Connection closed:Peer");
     $('div.left.icon').show();
     $('#disconnect').hide();
+
+
+    var elem = document.getElementById("showOnConnect");
+    elem.style.display="none";
+    elem = document.getElementById("sideBarContent");
+    elem.style.display="none";
+    elem = document.getElementById("particleHolder");
+    elem.style.display="block";
   });
 }
 
@@ -359,9 +373,31 @@ $('#message').keyup(function(event) {
 ////////////////////////////////function called///////////////////
 
 function disconnect() {
-  console.log("Closing connection");
-  connection.close();
-  $('div.left.icon').show();
-  $("#disconnect").hide();
-  $("#connect_notify").hide();
+
+  $("#setDecisionHeader").text("Confirm");
+  $("#setDecisionContent").html("<p>Do you really want to terminate this session?</p>");
+  $('.ui.decision.modal').modal({
+    closable: false,
+    onDeny: function() {
+
+    },
+    onApprove: function() {
+      console.log("Approved");
+      console.log("Closing connection");
+        if(connection){
+      connection.close();}
+      $('div.left.icon').show();
+      $("#disconnect").hide();
+      $("#connect_notify").hide();
+
+      var elem = document.getElementById("showOnConnect");
+      elem.style.display="none";
+      elem = document.getElementById("sideBarContent");
+      elem.style.display="none";
+      elem = document.getElementById("particleHolder");
+      elem.style.display="block";
+
+    }
+  }).modal('show');
+
 }

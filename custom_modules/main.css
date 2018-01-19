@@ -11,6 +11,20 @@ canvas {
   border: 1px solid black;
 }
 
+@keyframes slideInForConnect {
+  0% {
+    transform: translateY(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.connectionAtStart{
+  animation: 2s ease-out 0s 1 slideInForConnect;
+
+}
+
 .shout_box {
   background: #151515;
   width: 260px;
@@ -133,7 +147,7 @@ time {
 
 #my-video {
   position: fixed;
-  top: 70px;
+  top: 240px;
   right: 30px;
   width: 180;
   height: 120;
@@ -150,10 +164,22 @@ time {
   width: 100px;
 }
 
+@keyframes slideInFromDown {
+  0% {
+    transform: translateY(4%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .cardItem {
   padding: 10px 24px;
   width: 33%;
   float: left;
+  animation: 1s ease-out 0s 1 slideInFromDown;
+
+
 }
 
 .cardHover {
@@ -188,4 +214,56 @@ time {
 
 .highlightHeader:hover {
   color: #3f3f3f;
+}
+
+
+/////////////
+
+
+
+form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px;
+  margin-left: -250px;
+  width: 100%;
+  height: 100%;
+  border: 4px dashed #000;
+}
+form div p{
+
+  font-size: 24px;
+  text-align: center;
+  line-height: 10px;
+  color: #a3a3a3;
+  font-family: Arial;
+}
+form span{
+  font-size: 24px;
+  text-align: center;
+  line-height: 70px;
+  color: #a3a3a3;
+  font-family: Arial;
+}
+form input{
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+}
+
+.info:hover{
+
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.browseGuest:hover{
+  cursor: pointer;
+  text-decoration: underline;
+
 }

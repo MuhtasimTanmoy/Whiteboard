@@ -18,7 +18,7 @@
     <div>
       <div>
 
-        <div id="particleHolder" style="display:none;background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
+        <div id="particleHolder" style="display:block;background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
 
 
 
@@ -26,24 +26,36 @@
           <div style="position: relative;
     text-align: center;
     color: white;">
-            <div id="particlesContainer" style="width:100%;height:680px">
+            <div id="particlesContainer" style="width:100%;height:750px">
             </div>
-            <div style="position: absolute;
+            <div  style="position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);">
-              <h1 style="font-size:38px">Canvas</h1>
+              <h1 class="connectionAtStart"  style="font-size:38px">Canvas</h1>
 
-              <div class="ui text " id="myId"></div>
+              <div class="ui text connectionAtStart" style="margin:10px;border-width:2px;borderColor:#fff;border-style:dashed;border-radius:5px" id="myId"></div>
 
-              <div class="ui left icon input">
+              <div class="ui left icon input connectionAtStart" style="margin:10px">
                 <input type="text" placeholder="Partner id" id="partner">
                 <i class="add user icon"></i>
               </div>
 
+              <div class="ui text info">
+                Share your id to connect.
+              </div>
+
+
+
               <!-- <div id="connect_notify"></div>
     <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div> -->
 
+            </div>
+            <div class="ui text browseGuest" onclick="browseAsGuest()" style="position: fixed;
+              bottom: 40px;
+              right: 46%;
+              z-index: 9;">
+              Browse as guest.
             </div>
           </div>
 
@@ -52,7 +64,45 @@
           <!-- <div class="ui button"><a href="http://localhost:3000/#chess_section">Connect</a></div> -->
         </div>
 
-        <div class="ui" style="display:block;padding-left:80px;background:#f8f8f8;height:750px" id="showOnConnect">
+        <div class="ui" style="display:none;padding-left:80px;background:#f8f8f8;height:750px" id="showOnConnect">
+
+
+                    <div id="sideBarContent" class="ui left demo vertical visible inverted sidebar labeled icon menu" style="margin-top:60px;display:none">
+                      <a class="item" onclick="showDashBoard()">
+                      <i class="home icon"></i>
+                      Home
+                    </a>
+                      <a class="item" onclick="showCanvas()">
+                      <i class="write icon"></i>
+                      Canvas
+                    </a>
+                      <a class="item" onclick="showVoiceCall()">
+                      <i class="call icon"></i>
+                      Voice
+                    </a>
+                      <a class="item" onclick="showVideoCall()">
+                      <i class="photo icon"></i>
+                      Video
+                    </a>
+                      <a class="item" onclick="showGames()">
+                      <i class="game icon"></i>
+                      Games
+                    </a>
+                      <a class="item" onCLick="showPDF()">
+                      <i class="file pdf outline icon"></i>
+                      PDF
+                    </a>
+                      <a class="item" onCLick="showDropbox()">
+                      <i class="dropbox icon"></i>
+                      File
+                    </a>
+                      <a class="item" onCLick="disconnect()">
+                      <i class="power icon"></i>
+                      End
+                    </a>
+                    </div>
+
+
           <div class="ui prompt modal">
             <div class="header" id="setPromptHeader"></div>
             <div class="content" id="setPromptContent">
@@ -87,9 +137,13 @@
             <div class="one wide column">
               <i id="backButton" style="margin-top:25px;margin-left:30px" class="chevron backButton left big icon" onclick="showDashBoard()"></i>
             </div>
-            <div class="three wide column">
+            <div class="six wide column">
               <h1 id="currentWindow" style="color:#a8a8a8;margin-top:20px">DashBoard</h1></div>
-            <div class="twelve wide column"></div>
+            <div class="five wide column"></div>
+            <div class="ui two wide column">
+              <div id="connect_notify" style="float:left;margin-top:25px"></div>
+              <!-- <div class="ui button red" style="display:none;float:left" id="disconnect" onClick=disconnect()>Disconnect</div> -->
+            </div>
 
 
           </div>
@@ -97,40 +151,6 @@
 
 
 
-          <div class="ui left demo vertical visible inverted sidebar labeled icon menu" style="margin-top:60px">
-            <a class="item" onclick="showDashBoard()">
-            <i class="home icon"></i>
-            Home
-          </a>
-            <a class="item" onclick="showCanvas()">
-            <i class="write icon"></i>
-            Canvas
-          </a>
-            <a class="item" onclick="showVoiceCall()">
-            <i class="call icon"></i>
-            Voice
-          </a>
-            <a class="item" onclick="showVideoCall()">
-            <i class="photo icon"></i>
-            Video
-          </a>
-            <a class="item" onclick="showGames()">
-            <i class="game icon"></i>
-            Games
-          </a>
-            <a class="item" onCLick="showPDF()">
-            <i class="file pdf outline icon"></i>
-            PDF
-          </a>
-            <a class="item" onCLick="showDropbox()">
-            <i class="dropbox icon"></i>
-            File
-          </a>
-            <a class="item" onCLick="rollBack()">
-            <i class="power icon"></i>
-            End
-          </a>
-          </div>
 
 
 
@@ -155,11 +175,6 @@
               <input type="text" placeholder="Partner id" id="partner">
               <i class="users icon"></i>
             </div> -->
-                <div id="connect_notify"></div>
-                <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div>
-
-
-
                 <div style="margin:0px 80px 0px 80px">
 
 
@@ -312,13 +327,27 @@
 
             <div id="dropbox_section" class="row" style="padding-top:30px">
               <div class="column">
-                <div class="ui segment">
+                <!-- <div class="ui segment"  style="width:100%;height:400px">
+
+
+
                   <div>
-                    <label for="file" class="ui icon blue button">
+                    <label for="file" class="ui blue button">
           <i class="file icon"></i>
           Open File</label>
                     <input type="file" id="file" style="display:none" onchange="openFile(event)">
                   </div>
+                </div> -->
+
+                <div class="ui segment" style="width:100%;height:500px">
+
+                  <form>
+                    <input type="file" multiple>
+                    <i style="margin-top:80px" class="cloud upload massive grey icon"></i>
+                    <div style="margin-top:40px;margin-bottom:40px"></div>
+                    <span >Drag your files here or click in this area.</span>
+                  </form>
+
                 </div>
 
                 <div class="ui segment">
@@ -368,7 +397,8 @@
             <div id="call_section" class="row">
               <div class="column">
                 <div>
-                  <div class="ui segment">
+                  <div class="ui segment" style="width:100%;height:400px">
+                    <div style="padding-top:10%">
                     <div class="ui blue button" id="voice_call">
                       Call
                     </div>
@@ -377,6 +407,7 @@
                     </div>
                     <div class="ui red button" id="end_call" style="display : none">
                       End
+                    </div>
                     </div>
                   </div>
                   <div id="voice" style="display: none;">
@@ -613,7 +644,7 @@
                   <div class="ui grid">
 
                     <div class="ten wide column">
-                      <canvas id="pdf-holder-new" style="float:left,padding-left:10px"></canvas>
+                      <canvas id="pdf-holder-new" resize="" data-paper-scope="2"></canvas>
                     </div>
                     <div class="six wide column" style="background:#fff">
                       <div class="ui segment">
@@ -739,7 +770,7 @@
 
 
 
-        <!-- <script type="text/paperscript" src="./draw.js" canvas="pdf-holder-new" data-script-scope="add"></script> -->
+        <script type="text/paperscript" src="./pdf_draw.js" canvas="pdf-holder-new" data-script-scope="add"></script>
 
 
 

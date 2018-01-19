@@ -71,6 +71,12 @@ function receivingDataProcess(data) {
       }
     }).modal('show');
   }
+  if(message_json.partner_currently_in!=null){
+    console.log(message_json.partner_currently_in);
+    currentlyIn=message_json.partner_currently_in;
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' > '+ currentlyIn +'</h3>');
+
+  }
   if (message_json.call_status == "hang_up_video") {
     if (call) {
       call.close();
@@ -157,7 +163,7 @@ function receivingDataProcess(data) {
         snake_upperPlayer=false;
         snakeGameStart();
 
-        
+
       }
     }).modal('show');
 
@@ -173,19 +179,19 @@ function receivingDataProcess(data) {
     var direction=message_json.snake_move;
     if(snake_upperPlayer){
       changeD2(direction);
-      
+
     }
     else{
       console.log("Calling this: "+direction);
       changeD(direction);
     }
-    
+
   }
 
   if(message_json.snake_food_update=="true"){
     console.log(message_json.food_x);
     console.log(message_json.food_y);
-    
+
     var data={
       x:message_json.food_x,
     y:message_json.food_y};
@@ -193,7 +199,7 @@ function receivingDataProcess(data) {
     changeFood(data);
   }
 
-  
+
 /////////////////////////////////Chess//////////////////////////////
 
   if (message_json.chess == "true") {

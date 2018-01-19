@@ -1,3 +1,13 @@
+function browseAsGuest(){
+  var elem = document.getElementById("showOnConnect");
+  elem.style.display="block";
+  elem = document.getElementById("sideBarContent");
+  elem.style.display="block";
+  elem = document.getElementById("particleHolder");
+  elem.style.display="none";
+  showDashBoard();
+}
+
 function showDashBoard() {
   var elem = document.getElementById("dashboard_section");
   elem.style.display = "block";
@@ -13,6 +23,11 @@ function showDashBoard() {
   elem.style.display = "none";
   elem = document.getElementById("pdf_section");
   elem.style.display = "none";
+
+  if(window.send!=undefined){
+
+  send('{"partner_currently_in": "DashBoard"}');
+}
 
   updateTitle("DashBoard");
 
@@ -37,6 +52,9 @@ function showCanvas() {
   elem = document.getElementById("pdf_section");
   elem.style.display = "none";
 
+  send('{"partner_currently_in": "Canvas"}');
+
+
   updateTitle("Canvas");
   $("#backButton").show();
 
@@ -57,6 +75,8 @@ function showVoiceCall() {
   elem.style.display = "none";
   elem = document.getElementById("pdf_section");
   elem.style.display = "none";
+  send('{"partner_currently_in": "Voice Call"}');
+
   updateTitle("Voice Call");
   $("#backButton").show();
 
@@ -77,6 +97,8 @@ function showVideoCall() {
   elem.style.display = "none";
   elem = document.getElementById("pdf_section");
   elem.style.display = "none";
+  send('{"partner_currently_in": "Video Call"}');
+
   updateTitle("Video Call");
   $("#backButton").show();
 
@@ -103,6 +125,8 @@ function showGames() {
   elem.style.display = "none";
   elem = document.getElementById("gameContent");
   elem.style.display = "block";
+  send('{"partner_currently_in": "Games"}');
+
 
   updateTitle("Games");
   $("#backButton").show();
@@ -124,6 +148,8 @@ function showDropbox() {
   elem.style.display = "none";
   elem = document.getElementById("pdf_section");
   elem.style.display = "none";
+  send('{"partner_currently_in": "Fil Share"}');
+
   updateTitle("File drop");
   $("#backButton").show();
 
@@ -144,6 +170,8 @@ function showPDF() {
   elem.style.display = "none";
   elem = document.getElementById("pdf_section");
   elem.style.display = "block";
+  send('{"partner_currently_in": "PDF"}');
+
   updateTitle("PDF share");
   $("#backButton").show();
 
