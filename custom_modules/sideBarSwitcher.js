@@ -15,6 +15,13 @@ elem = document.getElementById("pdf_section");
 elem.style.display="none";
 
 
+
+updateTitle("DashBoard");
+
+$("#backButton").hide();
+
+
+
 }
 
 function showCanvas(){
@@ -34,6 +41,9 @@ elem.style.display="none";
 elem = document.getElementById("pdf_section");
 elem.style.display="none";
 
+updateTitle("Canvas");
+$("#backButton").show();
+
 }
 
 function showVoiceCall(){
@@ -51,6 +61,10 @@ elem = document.getElementById("game_section");
 elem.style.display="none";
 elem = document.getElementById("pdf_section");
 elem.style.display="none";
+updateTitle("Voice Call");
+$("#backButton").show();
+
+
 
 }
 
@@ -69,6 +83,10 @@ elem = document.getElementById("game_section");
 elem.style.display="none";
 elem = document.getElementById("pdf_section");
 elem.style.display="none";
+updateTitle("Video Call");
+$("#backButton").show();
+
+
 
 }
 
@@ -87,6 +105,17 @@ elem = document.getElementById("game_section");
 elem.style.display="block";
 elem = document.getElementById("pdf_section");
 elem.style.display="none";
+elem = document.getElementById("chessView");
+elem.style.display="none";
+elem = document.getElementById("snakeView");
+elem.style.display="none";
+elem = document.getElementById("gameContent");
+elem.style.display="block";
+
+updateTitle("Games");
+$("#backButton").show();
+
+
 
 }
 
@@ -105,6 +134,10 @@ elem = document.getElementById("game_section");
 elem.style.display="none";
 elem = document.getElementById("pdf_section");
 elem.style.display="none";
+updateTitle("File drop");
+$("#backButton").show();
+
+
 
 }
 
@@ -123,10 +156,69 @@ elem = document.getElementById("game_section");
 elem.style.display="none";
 elem = document.getElementById("pdf_section");
 elem.style.display="block";
+updateTitle("PDF share");
+$("#backButton").show();
+
+
+
+}
+
+function showChess(){
+  var elem = document.getElementById("gameContent");
+  elem.style.display="none";
+  elem = document.getElementById("chessView");
+  elem.style.display="block";
+  elem = document.getElementById("snakeView");
+  elem.style.display="none";
+  updateTitle("Chess");
+  $("#backButton").show();
+
+
+}
+
+function showSnake(){
+  var elem = document.getElementById("gameContent");
+  elem.style.display="none";
+  elem = document.getElementById("chessView");
+  elem.style.display="none";
+  elem = document.getElementById("snakeView");
+  elem.style.display="block";
+  updateTitle("Snake");
+  $("#backButton").show();
 
 }
 
 function rollBack(){
+
+}
+
+function updateTitle(type){
+  // if(type=="canvas"){
+  //
+  // }
+  // else if(type=="call"){
+  //
+  // }
+  // else if(type=="video"){
+  //
+  // }
+  // else if(type=="pdf"){
+  //
+  // }
+  // else if(type=="file"){
+  //
+  // }
+  // else if(type=="game"){
+  //
+  // }
+
+console.log("Called"+type);
+  // var elem = document.getElementById("currentWindow");
+  // elem.value=type;
+
+  $("#currentWindow").html(type);
+
+
 
 
 }

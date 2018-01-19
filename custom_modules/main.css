@@ -17,7 +17,7 @@ canvas {
   overflow: hidden;
   position: fixed;
   bottom: 0;
-  right: 10%;
+  right: 5%;
   z-index: 9;
 }
 
@@ -151,7 +151,7 @@ time {
 }
 
 .cardItem {
-  padding: 5px 5px;
+  padding: 10px 24px;
   width: 33%;
   float: left;
 }
@@ -171,4 +171,21 @@ time {
   cursor: pointer;
   color: black;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25), 0 3px 5px rgba(0, 0, 0, 0.22);
+}
+
+.backButton {
+  color: #a3a3a3;
+}
+
+.backButton:hover {
+  color: #3f3f3f;
+  cursor: pointer;
+}
+
+.highlightHeader {
+  color: #a3a3a3;
+}
+
+.highlightHeader:hover {
+  color: #3f3f3f;
 }

@@ -42,9 +42,12 @@ var pageNum = 1;
 var pageRendering = false;
 var pageNumPending = null;
 
-var scale = 1.5,
+var scale = 1.2,
 canvas = document.getElementById('pdf-holder-new'),
 ctx = canvas.getContext('2d');
+var pdfData;
+
+var scaleFixer=scale;
 
 
 //////////////////////////Snake_game////////////

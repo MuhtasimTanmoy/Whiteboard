@@ -6,10 +6,10 @@ var receivedPath=new Path();
 receivedPath.strokeWidth=1;
 receivedPath.strokeColor="#ff0000";
 
-var textItem = new PointText(new Point(10, 20));
-textItem.fillColor = 'black';
-
-textItem.content = 'Click and drag to draw a line.';
+// var textItem = new PointText(new Point(10, 20));
+// textItem.fillColor = 'black';
+//
+// textItem.content = 'Click and drag to draw a line.';
 
 function onMouseDown(event) {
 	// If we produced a path before, deselect it:
