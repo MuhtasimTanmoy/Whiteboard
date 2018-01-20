@@ -101,7 +101,7 @@ var peer = new Peer(name, {host: 'localhost', port: 9000,debug:3, path: '/',conf
 
 console.log(peer.id + " started.");
 
-$('#myId').html("<h3 > Id: " + peer.id + "</h3>");
+$('#myId').html("<h3 > id: " + peer.id + "</h3>");
 ////debug
 showDashBoard();
 
@@ -113,7 +113,7 @@ peer.on('connection', function(conn) {
 
     connection = conn;
 
-    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' in '+ currentlyIn +' </h3>');
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Partner:  '+connection.peer+' in '+ currentlyIn +' </h3>');
 
     console.log(connection.peer + " Connected");
     receiveData();
@@ -282,7 +282,7 @@ function connectionStart(partnerId) {
 
   connection.on('open', function() {
   clearTimeout(connect_timeout);
-    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' > '+ currentlyIn +'</h3>');
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Partner:  '+connection.peer+' > '+ currentlyIn +'</h3>');
 
     console.log("Connection open");
     console.log(connection);

@@ -175,7 +175,7 @@ time {
 
 .cardItem {
   padding: 10px 24px;
-  width: 33%;
+  width: 100%;
   float: left;
   animation: 1s ease-out 0s 1 slideInFromDown;
 
@@ -258,11 +258,12 @@ form input{
 
 .info:hover{
 
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 .browseGuest:hover{
+    color: #3f3f3f;
   cursor: pointer;
   text-decoration: underline;
 

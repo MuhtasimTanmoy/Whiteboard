@@ -74,7 +74,7 @@ function receivingDataProcess(data) {
   if(message_json.partner_currently_in!=null){
     console.log(message_json.partner_currently_in);
     currentlyIn=message_json.partner_currently_in;
-    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Connected to:  '+connection.peer+' > '+ currentlyIn +'</h3>');
+    $("#connect_notify").html('<h3 style="color:#a3a3a3;">Partner:  '+connection.peer+' > '+ currentlyIn +'</h3>');
 
   }
   if (message_json.call_status == "hang_up_video") {
@@ -90,6 +90,8 @@ function receivingDataProcess(data) {
       closable: false,
       onApprove: function() {
         console.log("Approved");
+        $("#their-video").hide();
+        $("#my-video").hide();
       }
     }).modal('show');
   }

@@ -49,3 +49,19 @@ function get_cam(){
           console.log("Video not granted");
         });
   }
+
+  $("#end_video_call").click(function(e) {
+    e.preventDefault();
+    if (call) {
+      call.close();
+    }
+    $("#their-video").hide();
+    $("#my-video").hide();
+    send('{"call_status": "hang_up_video"}');
+  });
+  $("#cancel_video_call").click(function(e) {
+    e.preventDefault();
+    $("#cancel_video_call").hide();
+    $("#video_call").show();
+    send('{"call_status": "hang_up_video"}');
+  });
