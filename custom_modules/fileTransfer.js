@@ -17,7 +17,7 @@ function openFile(event) {
     if (start >= input.files[0].size) {
 
       blob_data_send({done: true});
-      $("#sent_files").prepend('<li>' + input.files[0].name + '</li>');
+      $("#sent_files").prepend('<li><h3 style="color:#3f3f3f">' + input.files[0].name + '</h3></li>');
       $("#sent").text('100.00%');
 
     } else {

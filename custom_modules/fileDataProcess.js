@@ -25,10 +25,10 @@ function receivingFile(data) {
     //my_data_send({done: true});
     if (partner_file_type.split('/')[0] == 'image') {
       //$("#share_img").append('<a href="'+partner_buffer_url+'"  download="'+partner_file_name+'"><img src="'+partner_buffer_url+'" height="200px" width="300px"/></a>');
-      $("#download_table").prepend('<tr><td><img src="' + partner_buffer_url + '" height="150px" width="200px" download="' + partner_file_name + '"/></td><td>' + partner_file_name + '</td><td><a href="' + partner_buffer_url + '"  download="' + partner_file_name + '"><span style="color:#ddd">download</span></a></td></tr>');
+      $("#download_table").prepend('<tr><td><img src="' + partner_buffer_url + '" height="150px" width="200px" download="' + partner_file_name + '"/></td><td><h3 style="color:#3f3f3f">' + partner_file_name + '</h3></td><td><a href="' + partner_buffer_url + '"  download="' + partner_file_name + '"><h3 style="color:#3f3f3f">download</h3></a></td></tr>');
     } else {
       //$("#share_img").append('<br><a href="'+partner_buffer_url+'"  download="'+partner_file_name+'">'+partner_file_name+'</a><br>');
-      $("#download_table").prepend('<tr><td></td><td>' + partner_file_name + '</td><td><a href="' + partner_buffer_url + '"  download="' + partner_file_name + '"><span style="color:#ddd">download</span></a></td></tr>');
+      $("#download_table").prepend('<tr><td><h3 style="color:#3f3f3f">'+partner_file_type+'</h3></td><td><h3 style="color:#3f3f3f">' + partner_file_name + '</h3></td><td><a href="' + partner_buffer_url + '"  download="' + partner_file_name + '"><h3 style="color:#3f3f3f">download</h3></a></td></tr>');
     }
 
     //$("#share_img").append('<img src="'+partner_buffer_url+'" target="_blank" download="file.jpg"/>');
