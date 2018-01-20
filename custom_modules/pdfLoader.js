@@ -112,6 +112,7 @@ function loadPdf(event) {
 
 
     function onPrevPage() {
+        pdf_clear();
       blob_data_send({prev: true});
       if (pageNum <= 1) {
         return;
@@ -125,6 +126,7 @@ function loadPdf(event) {
 * Displays next page.
 */
     function onNextPage() {
+        pdf_clear();
       blob_data_send({next: true});
       if (pageNum >= pdfDoc.numPages) {
         return;
@@ -244,6 +246,7 @@ $('#pageJump').keyup(function(event) {
 
 
 function renderPageNo(number){
+  pdf_clear();
 
   queueRenderPage(number);
 }
