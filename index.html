@@ -11,18 +11,10 @@
 </head>
 
 <body>
-
-
-  <!-- <div class="pusher"> -->
   <div>
     <div>
       <div>
-
         <div id="particleHolder" style="display:block;background: radial-gradient(rgb(27, 201, 142), rgb(11, 90, 63)); z-index: 5; transform: translate3d(0px, 0px, 0px);">
-
-
-
-
           <div style="position: relative;
     text-align: center;
     color: white;">
@@ -40,16 +32,9 @@
                 <input type="text" placeholder="Partner id" id="partner">
                 <i class="add user icon"></i>
               </div>
-
               <div class="ui text info">
                 Share your id to connect.
               </div>
-
-
-
-              <!-- <div id="connect_notify"></div>
-    <div class="ui button red" style="display:none" id="disconnect" onClick=disconnect()>Disconnect</div> -->
-
             </div>
             <div class="ui text browseGuest" onclick="browseAsGuest()" style="position: fixed;
               bottom: 40px;
@@ -58,15 +43,8 @@
               Browse as guest.
             </div>
           </div>
-
-
-
-          <!-- <div class="ui button"><a href="http://localhost:3000/#chess_section">Connect</a></div> -->
         </div>
-
         <div class="ui" style="display:none;padding-left:80px;background:#f8f8f8;height:750px" id="showOnConnect">
-
-
           <div id="sideBarContent" class="ui left demo vertical visible inverted sidebar labeled icon menu" style="margin-top:60px;display:none">
             <a class="item" onclick="showDashBoard()">
                       <i class="home icon"></i>
@@ -101,8 +79,6 @@
                       End
                     </a>
           </div>
-
-
           <div class="ui prompt modal">
             <div class="header" id="setPromptHeader"></div>
             <div class="content" id="setPromptContent">
@@ -115,25 +91,15 @@
             <div class="header" id="setDecisionHeader">Decision</div>
             <div class="content" id="setDecisionContent">
             </div>
-
             <div class="actions">
               <div class="ui blue approve button">Ok</div>
               <div class="ui cancel button">Cancel</div>
             </div>
           </div>
-
           <div style="width:100%;height:60px;text-align:center;background:#fff;padding-top:5px;box-shadow: 0 0px 3px rgba(0, 0, 0, 0.25), 0 0px 3px rgba(0, 0, 0, 0.22)">
                 <img src="./img/canvas.png" alt="" style="width:160px;height:50px">
               </div>
-
-
-
-
-
-
           <div class="ui grid">
-            <!-- <div class="one wide column"></div> -->
-
             <div class="one wide column">
               <i id="backButton" style="margin-top:25px;margin-left:30px" class="chevron backButton left big icon" onclick="showDashBoard()"></i>
             </div>
@@ -142,41 +108,12 @@
             <div class="four wide column"></div>
             <div class="ui three wide column">
               <div id="connect_notify" style="float:left;margin-top:25px"></div>
-              <!-- <div class="ui button red" style="display:none;float:left" id="disconnect" onClick=disconnect()>Disconnect</div> -->
             </div>
-
-
           </div>
-
-
-
-
-
-
-
           <div class="ui equal width center aligned padded grid">
-            <!-- <div class="row" style="padding-top:40px">
-          <div class="teal column">
-          </div>
-          <div class="teal column">
-            <div class="ui text">Canvas</div>
-          </div>
-          <div class="teal column">
-          </div>
-        </div> -->
-            <!-- <div class="row">
-          <div class="column">
-            <div class="ui segment" id="myId"></div>
-          </div>
-        </div> -->
             <div id="dashboard_section" class="row">
               <div class="column">
-                <!-- <div class="ui left icon input">
-              <input type="text" placeholder="Partner id" id="partner">
-              <i class="users icon"></i>
-            </div> -->
                 <div style="margin:0px 80px 0px 80px">
-
                   <div class="ui three column stackable grid">
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showCanvas()">
@@ -193,14 +130,10 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
-
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showVoiceCall()">
-
                         <div class="content" style="text-align:center;padding:20px">
                           <div class="ui image " style="height:100px">
                             <div>
@@ -213,14 +146,10 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
-
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showPDF()">
-
                         <div class="content" style="text-align:center;padding:20px">
                           <div class="ui image " style="height:100px">
                             <div>
@@ -233,14 +162,10 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
-
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showVideoCall()">
-
                         <div class="content" style="text-align:center;padding:20px">
                           <div class="ui image " style="height:100px">
                             <div>
@@ -253,15 +178,10 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
-
-
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showGames()">
-
                         <div class="content" style="text-align:center;padding:20px">
                           <div class="ui image " style="height:100px">
                             <div>
@@ -274,11 +194,8 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
-
                     <div class="cardItem column">
                       <div class="cardHover" onclick="showDropbox()">
 
@@ -294,63 +211,34 @@
                       </a>
                           </div>
                         </div>
-
-
                       </div>
                     </div>
                   </div>
-
-
-
                 </div>
               </div>
             </div>
-            <!-- <div class="row">
-          <div class="ui input">
-            <input type="text" placeholder="Your message" id="message">
-          </div>
-          <div class="ui blue button" onclick=test()>Test</div>
-        </div> -->
             <div id="canvas_section" class="row" style="margin-left:40px">
               <div class="column">
                 <section id="draw">
                   <div class="row" style="padding-top: 20px">
                     <canvas id="canvas" resize="" style="user-select: none; touch-action: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(1, 0, 0, 0);" width="1290" height="553" data-paper-scope="1">
               </canvas>
-
                     <div class="ui button blue" id="drawMode" onCLick=toggleMode()>Point Mode</div>
                     <div class="ui button blue" onclick="my_clear()">Clean</div>
                   </div>
                 </section>
               </div>
-
             </div>
-
             <div id="dropbox_section" class="row" style="padding-top:30px">
               <div class="column">
-                <!-- <div class="ui segment"  style="width:100%;height:400px">
-
-
-
-                  <div>
-                    <label for="file" class="ui blue button">
-          <i class="file icon"></i>
-          Open File</label>
-                    <input type="file" id="file" style="display:none" onchange="openFile(event)">
-                  </div>
-                </div> -->
-
                 <div class="ui segment" style="width:100%;height:500px">
-
                   <form>
                     <input type="file" multiple>
                     <i style="margin-top:80px" class="cloud upload massive grey icon"></i>
                     <div style="margin-top:40px;margin-bottom:40px"></div>
                     <span>Drag your files here or click in this area.</span>
                   </form>
-
                 </div>
-
                 <div class="ui segment">
                   <div class="ui text" id="progress" style="display: none;">
                     Received <span id="downloaded"></span> of <span id="file_size"></span> bytes
@@ -358,7 +246,6 @@
                   <div class="ui text" id="progress_sent" style="display: none;">
                     Sent <span id="sent"></span> of <span id="file_size_sent"></span> bytes
                   </div>
-
                   <table class="ui celled table">
                     <thead>
                       <tr>
@@ -368,33 +255,13 @@
                       </tr>
                     </thead>
                     <tbody id="download_table">
-
                     </tbody>
                   </table>
-
                   <ul id="sent_files">
-
                   </ul>
                 </div>
-
-
               </div>
-
-
             </div>
-
-
-
-            <!-- <div class="row">
-          <div class="column">
-            <embed src="./a.pdf" width="1200" height="800" type='application/pdf'>
-
-          </div>
-        </div> -->
-
-
-
-
             <div id="call_section" class="row">
               <div class="column">
                 <div>
@@ -417,12 +284,9 @@
                 </div>
               </div>
             </div>
-
             <div id="video_call_section" class="row">
               <div class="column">
-
                 <div>
-
                   <div class="ui segment">
                     <div class="ui blue button" id="video_call">
                       Video Call
@@ -438,15 +302,10 @@
                   <div id="my-video-div">
                     <video id="my-video" muted="true" width="180" height="120" autoplay=""></video>
                   </div>
-
                 </div>
               </div>
             </div>
-
-
             <div id="game_section" style="width:100%;padding-left:5%;margin-top:60px">
-
-
               <div class="ui grid" id="gameContent">
                 <div class="cardItem" style="width:50%">
                   <div class="cardHover" onclick="showChess()">
@@ -463,14 +322,10 @@
                   </a>
                       </div>
                     </div>
-
-
                   </div>
                 </div>
-
                 <div class="cardItem" style="width:50%">
                   <div class="cardHover" onclick="showSnake()">
-
                     <div class="content" style="text-align:center;padding:20px">
                       <div class="ui image " style="height:100px">
                         <div>
@@ -483,17 +338,11 @@
                   </a>
                       </div>
                     </div>
-
-
                   </div>
                 </div>
-
               </div>
-
               <div id="chessView" style="display:none" class="row">
                 <div class="column">
-
-
                   <section id="chess_section">
                     <div id="board_div" align="center">
                       <div id="board" style="width:500px;">
@@ -610,7 +459,6 @@
                           </div>
                         </div>
                       </div>
-
                       <div>
                         <div style="margin-top:10px">
                           <div class="ui button" id="chess_new_game">New Game</div>
@@ -619,15 +467,12 @@
 
                         </div>
                       </div>
-
                     </div>
                     <div style="text-align:center;">
                       <br>
                       <div class="ui text" id="chess_status">White to move</div>
                     </div>
                   </section>
-
-
                 </div>
               </div>
 
@@ -637,15 +482,12 @@
                   <div class="ui blue button" onclick=shouldStartGame()>Start</div>
                 </div>
               </div>
-
             </div>
 
             <div id="pdf_section" class="row" style="padding-top:10px;width:100%;height:700px">
               <div class="column">
-
                 <div class="ui segment">
                   <div class="ui grid">
-
                     <div class="ten wide column">
                       <canvas id="pdf-holder-new" resize="" data-paper-scope="2"></canvas>
                     </div>
@@ -657,61 +499,33 @@
   Open Pdf</label>
                           <input type="file" id="pdfLoader" style="display:none" onchange="loadPdf(event)">
                         </div>
-                        <!-- <div>
-
-
-
-                          <button id="prev">Previous</button>
-        <button id="next">Next</button> &nbsp; &nbsp; -->
-                          <!-- <button onclick="setScale(1.6)">TestPurpose</button>
-                        </div> -->
                       </div>
-
                       <div class="ui segment" style="margin-top:20%">
                         <i class="minus big icon backButton" onclick="decrementScale()"></i>
                         <i class="plus big icon backButton" onclick="setScale(.8)"></i>
                       </div>
-
                       <div class="ui segment" style="margin-top:20%">
-
                         <div>
                           <div class="ui mini  input" style="width:60px">
                             <input type="text" placeholder="jump" id="pageJump">
                           </div>
                         </div>
-
                         <div>
                           <div class="ui content" style="margin-bottom:10px">
                             <span id="page_num"></span> / <span id="page_count"></span>
                           </div>
-                          <!-- <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span> -->
-
                         </div>
                         <div>
-
                           <i class="chevron left  big icon backButton" id="prev"></i>
                           <i class="chevron right big icon backButton" id="next"></i>
                         </div>
-
-
                       </div>
-
-
-
                     </div>
-
                   </div>
-
-
                 </div>
-
               </div>
-
-
             </div>
           </div>
-
-
           <div class="shout_box">
             <div class="header">Text Chat
               <span class="badge" id="unread_badge"></span>
@@ -725,29 +539,17 @@
               </div>
             </div>
           </div>
-
         </div>
-
-
-
         <div/>
-
-        <!-- </div> -->
-
-
-
         <script type="text/javascript" src="./peer.js"></script>
         <script type="text/javascript" src="./responsivevoice.js"></script>
         <script type="text/javascript" src="./dataProcess.js"></script>
         <script type="text/javascript" src="./sideBarSwitcher.js"></script>
-
-
         <script type="text/javascript" src="./connection.js"></script>
         <script type="text/javascript" src="./chessboard.js"></script>
         <script type="text/javascript" src="./chess.js"></script>
         <script type="text/javascript" src="./chess_custom.js"></script>
         <script type="text/javascript" src="./paper-full.min.js"></script>
-
         <script type="text/javascript" src="./chat.js"></script>
         <script type="text/javascript" src="./voiceCall.js"></script>
         <script type="text/javascript" src="./videoCall.js"></script>
@@ -759,12 +561,7 @@
         <script type="text/javascript" src="/particlesEmbed.js"></script>
         <script type="text/javascript" src="/pdfLoader.js"></script>
         <script type="text/javascript" src="./test.js"></script>
-
         <script src="/semantic-ui/dist/semantic.min.js"></script>
-
-
-
-
 
         <script>
           function send(data) {
@@ -779,14 +576,6 @@
         </script>
 
         <script type="text/paperscript" src="./draw.js" canvas="canvas" data-script-scope="add"></script>
-
-
-
-
         <script type="text/paperscript" src="./pdf_draw.js" canvas="pdf-holder-new" data-script-scope="add"></script>
-
-
-
 </body>
-
 </html>

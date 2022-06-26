@@ -28,16 +28,10 @@ Use of propietory protocol across clients for message exchange in chatting an ga
 ## Screenshots
 
 
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas2.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas3.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas4.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas5.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas7.png )
-
-![ Image ]( https://github.com/MuhtasimTanmoy/White-board/blob/master/Icanvas8.png )
+![ Image ](./screenshots/Icanvas.png)
+![ Image ](./screenshots/Icanvas2.png )
+![ Image ](./screenshots/Icanvas3.png )
+![ Image ](./screenshots/Icanvas4.png )
+![ Image ](./screenshots/Icanvas5.png )
+![ Image ](./screenshots/Icanvas7.png )
+![ Image ](./screenshots/Icanvas8.png )
