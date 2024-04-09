@@ -3,7 +3,6 @@
 Collaborative pdf sharing, real-time scrolling, annotating platform.
 Use of propietory protocol across clients for message exchange in chatting an gaming.
 
->  https://white-board.ml
 
 -  ## Technology
     - Express.js 
